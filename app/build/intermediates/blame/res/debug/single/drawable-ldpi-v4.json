@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/icon.png",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/drawable-ldpi/icon.png"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/icon.png",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/src/main/res/drawable-ldpi/icon.png"
+    }
+]

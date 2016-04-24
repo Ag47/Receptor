@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/build/intermediates/res/merged/debug/layout/help.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/src/main/res/layout/help.xml"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/build/intermediates/res/merged/debug/layout/activity_full_player.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/src/main/res/layout/activity_full_player.xml"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/build/intermediates/res/merged/debug/layout/file_browser.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/src/main/res/layout/file_browser.xml"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/build/intermediates/res/merged/debug/layout/choose_song_item.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/src/main/res/layout/choose_song_item.xml"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/file_browser.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/layout/file_browser.xml"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/choose_song_item.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/layout/choose_song_item.xml"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/main.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/layout/main.xml"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/save_images_dialog.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/layout/save_images_dialog.xml"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/build/intermediates/res/merged/debug/layout/color_preference.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/src/main/res/layout/color_preference.xml"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/build/intermediates/res/merged/debug/layout/save_images_dialog.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/src/main/res/layout/save_images_dialog.xml"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/help.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/layout/help.xml"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/build/intermediates/res/merged/debug/layout/choose_song.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/src/main/res/layout/choose_song.xml"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/color_preference.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/layout/color_preference.xml"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/build/intermediates/res/merged/debug/layout/main.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/src/main/res/layout/main.xml"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/choose_song.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/layout/choose_song.xml"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/activity_full_player.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/layout/activity_full_player.xml"
+    }
+]

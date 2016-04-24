@@ -1,0 +1,107 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:2:1-40:12
+	xmlns:android
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:2:11-69
+	package
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:3:7-29
+		INJECTED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:5:7-32
+		INJECTED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml
+	android:versionCode
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:4:7-30
+		INJECTED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:7:22-78
+application
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:8:5-39:19
+	android:label
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:8:48-80
+	android:icon
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:8:18-47
+activity#com.receptor.MidiSheetMusicActivity
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:9:9-17:20
+	android:screenOrientation
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:10:19-55
+	android:label
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:12:19-51
+	android:configChanges
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:11:19-54
+	android:name
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:9:19-69
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:13:13-16:29
+action#android.intent.action.MAIN
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:14:17-69
+	android:name
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:14:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:15:17-77
+	android:name
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:15:27-74
+activity#com.receptor.ChooseSongActivity
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:18:9-19:20
+	android:name
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:18:19-65
+activity#com.receptor.FileBrowserActivity
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:20:9-21:20
+	android:name
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:20:19-66
+activity#com.receptor.AllSongsActivity
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:22:9-23:20
+	android:name
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:22:19-63
+activity#com.receptor.RecentSongsActivity
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:24:9-25:20
+	android:name
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:24:19-66
+activity#com.receptor.SettingsActivity
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:26:9-27:20
+	android:name
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:26:19-63
+activity#com.receptor.HelpActivity
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:28:9-29:20
+	android:name
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:28:19-59
+activity#com.receptor.SheetMusicActivity
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:30:9-38:20
+	android:screenOrientation
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:31:19-55
+	android:configChanges
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:32:19-54
+	android:name
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:30:19-65
+intent-filter#android.intent.action.VIEW+android.intent.category.DEFAULT
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:33:13-37:29
+action#android.intent.action.VIEW
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:34:17-69
+	android:name
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:34:25-66
+category#android.intent.category.DEFAULT
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:35:17-76
+	android:name
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:35:27-73
+data
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:36:17-120
+	android:mimeType
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:36:94-116
+	android:pathPattern
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:36:63-93
+	android:host
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:36:46-62
+	android:scheme
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:36:23-44
+uses-sdk
+INJECTED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+	android:targetSdkVersion
+		INJECTED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml

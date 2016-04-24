@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.receptor"
+      android:versionCode="9"
+      android:versionName="2.6">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name="com.receptor.MidiSheetMusicActivity"
+                  android:screenOrientation="portrait"
+                  android:configChanges="orientation"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.receptor.ChooseSongActivity" >
+        </activity>
+        <activity android:name="com.receptor.FileBrowserActivity" >
+        </activity>
+        <activity android:name="com.receptor.AllSongsActivity" >
+        </activity>
+        <activity android:name="com.receptor.RecentSongsActivity" >
+        </activity>
+        <activity android:name="com.receptor.SettingsActivity" >
+        </activity>
+        <activity android:name="com.receptor.HelpActivity" >
+        </activity>
+        <activity android:name="com.receptor.SheetMusicActivity"
+                  android:screenOrientation="portrait"
+                  android:configChanges="orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file"  android:host="*" android:pathPattern=".*\\.mid" android:mimeType="*/*"  />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
