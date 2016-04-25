@@ -374,7 +374,6 @@ public class MidiPlayer extends LinearLayout {
     private void SunCreateMidiFile() {
         double inverse_tempo = 1.0 / midifile.getTime().getTempo();
         double inverse_tempo_scaled = inverse_tempo * speedBar.getProgress() / 100.0;
-        Log.wtf("tempo", Integer.toString(speedBar.getProgress()));
         // double inverse_tempo_scaled = inverse_tempo * 100.0 / 100.0;
         options.tempo = (int)(1.0 / inverse_tempo_scaled);
         pulsesPerMsec = midifile.getTime().getQuarter() * (1000.0 / options.tempo);
@@ -401,7 +400,6 @@ public class MidiPlayer extends LinearLayout {
         {
             arousal = (int) (180.0/107.0 * (arousal- 20.0) ) + 20;
         }
-        Log.wtf("arousal: ", Integer.toString(arousal));
 
         double inverse_tempo_scaled = inverse_tempo * arousal / 100.0;
         // double inverse_tempo_scaled = inverse_tempo * 100.0 / 100.0;

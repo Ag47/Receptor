@@ -13,12 +13,6 @@
         <item>G-flat major   E-flat minor</item>
         <item>G major         E minor</item>
         <item>A-flat major    F minor</item>
-    </string-array><string-array name="combine_interval_values">
-        <item>20</item>
-        <item>40</item>
-        <item>60</item>
-        <item>80</item>
-        <item>100</item>
     </string-array><string-array name="transpose_values">
         <item>12</item>
         <item>11</item>
@@ -45,6 +39,12 @@
         <item>-10</item>
         <item>-11</item>
         <item>-12</item>
+    </string-array><string-array name="combine_interval_values">
+        <item>20</item>
+        <item>40</item>
+        <item>60</item>
+        <item>80</item>
+        <item>100</item>
     </string-array><string-array name="show_note_letter_entries">
         <item>None</item>
         <item>Letters (A, A#)</item>
@@ -52,13 +52,6 @@
         <item>Movable Do-Re-Mi</item>
         <item>Fixed Numbers</item>
         <item>Movable Numbers</item>
-    </string-array><string-array name="show_note_letter_values">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
     </string-array><string-array name="key_signature_values">
         <item>-1</item>
         <item>0</item>
@@ -73,6 +66,13 @@
         <item>9</item>
         <item>10</item>
         <item>11</item>
+    </string-array><string-array name="show_note_letter_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
     </string-array><string-array name="combine_interval_entries">
         <item>20 milliseconds</item>
         <item>40 milliseconds</item>
@@ -105,4 +105,4 @@
         <item>Down 10 notes</item>
         <item>Down 11 notes</item>
         <item>Down 12 notes</item>
-    </string-array></file><file path="/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/values/strings.xml" qualifiers=""><string name="choose_song">Choose Song</string><string name="show_note_letters">Show Note Letters</string><string name="help_str">Help</string><string name="scroll_vertically">Scroll Vertically</string><string name="save_images_str">Save As Images</string><string name="time_signature">Time Signature</string><string name="play_measures_in_loop_start">Start Measure</string><string name="split_to_two_staffs_summary">Split the single track into two staffs (left hand and right hand staffs).</string><string name="left_hand_color">Left Hand Color</string><string name="combine_interval_summary">Notes within the given interval (in milliseconds) are combined into a single chord</string><string name="save_images_descr_str">Save the sheet music as images, in the directory /Pictures/MidiSheetMusic, with the following filename</string><string name="show_measures">Show Measure Numbers</string><string name="set_all_to_piano">Set All Instruments to Piano</string><string name="select_instruments_per_track">Select Instruments For Each Track</string><string name="play_measures_in_loop_title">Settings for Play Measures in a Loop</string><string name="split_to_two_staffs">Split Track Into Two Staffs</string><string name="transpose">Transpose Notes</string><string name="restore_defaults">Restore Default Settings</string><string name="key_signature">Key Signature</string><string name="select_tracks_to_mute">Select Tracks to Mute</string><string name="combine_to_two_staffs">Combine To Two Staffs</string><string name="combine_to_two_staffs_summary">Combine all the tracks into two staffs (left hand and right hand staffs). </string><string name="scan_files_str">Scan for MIDI Files</string><string name="show_piano">Show the Piano</string><string name="sheet_prefs_title">Sheet Music Preferences</string><string name="play_measures_in_loop">Play Measures in a Loop</string><string name="play_measures_in_loop_end">End Measure</string><string name="combine_interval">Combine Interval</string><string name="scan_button_title">Scan SD Card for MIDI files</string><string name="select_tracks_to_display">Select Tracks to Display</string><string name="app_name">Receptor</string><string name="right_hand_color">Right Hand Color</string><string name="show_lyrics">Show Lyrics</string><string name="song_settings_str">Song Settings</string><string name="browse_files_str">Browse for MIDI Files</string></file></source><source path="/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/generated/res/rs/debug"/><source path="/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/generated/res/resValues/debug"/></dataSet><dataSet config="debug" generated-set="debug$Generated"><source path="/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/debug/res"/></dataSet><mergedItems/></merger>
+    </string-array></file><file path="/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/values/strings.xml" qualifiers=""><string name="show_note_letters">Show Note Letters</string><string name="choose_song">Choose Song</string><string name="scroll_vertically">Scroll Vertically</string><string name="help_str">Help</string><string name="save_images_str">Save As Images</string><string name="time_signature">Time Signature</string><string name="split_to_two_staffs_summary">Split the single track into two staffs (left hand and right hand staffs).</string><string name="play_measures_in_loop_start">Start Measure</string><string name="combine_interval_summary">Notes within the given interval (in milliseconds) are combined into a single chord</string><string name="left_hand_color">Left Hand Color</string><string name="save_images_descr_str">Save the sheet music as images, in the directory /Pictures/MidiSheetMusic, with the following filename</string><string name="show_measures">Show Measure Numbers</string><string name="set_all_to_piano">Set All Instruments to Piano</string><string name="select_instruments_per_track">Select Instruments For Each Track</string><string name="play_measures_in_loop_title">Settings for Play Measures in a Loop</string><string name="split_to_two_staffs">Split Track Into Two Staffs</string><string name="transpose">Transpose Notes</string><string name="restore_defaults">Restore Default Settings</string><string name="key_signature">Key Signature</string><string name="select_tracks_to_mute">Select Tracks to Mute</string><string name="combine_to_two_staffs">Combine To Two Staffs</string><string name="combine_to_two_staffs_summary">Combine all the tracks into two staffs (left hand and right hand staffs). </string><string name="scan_files_str">Scan for MIDI Files</string><string name="show_piano">Show the Piano</string><string name="sheet_prefs_title">Sheet Music Preferences</string><string name="play_measures_in_loop">Play Measures in a Loop</string><string name="combine_interval">Combine Interval</string><string name="play_measures_in_loop_end">End Measure</string><string name="scan_button_title">Scan SD Card for MIDI files</string><string name="select_tracks_to_display">Select Tracks to Display</string><string name="app_name">Receptor</string><string name="show_lyrics">Show Lyrics</string><string name="right_hand_color">Right Hand Color</string><string name="song_settings_str">Song Settings</string><string name="browse_files_str">Browse for MIDI Files</string></file></source><source path="/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/generated/res/rs/debug"/><source path="/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/generated/res/resValues/debug"/></dataSet><dataSet config="debug" generated-set="debug$Generated"><source path="/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/debug/res"/></dataSet><mergedItems/></merger>

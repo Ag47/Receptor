@@ -36,6 +36,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -72,6 +73,7 @@ public class SheetMusicActivity extends Activity {
     private float _y;
 
     private ImageView play_button;
+    private RelativeLayout panel_2D;
 
     /**
      * Create this SheetMusicActivity.
@@ -127,6 +129,7 @@ public class SheetMusicActivity extends Activity {
         //
         pageView = (ViewGroup) findViewById(R.id.pageView);
         drag_image = (ImageView) findViewById(R.id.drag_button);
+        panel_2D = (RelativeLayout) findViewById(R.id.panel2D);
         //RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(150, 150);
         //drag_image.setLayoutParams(layoutParams);
         //drag_image.setOnTouchListener(this);
@@ -140,7 +143,8 @@ public class SheetMusicActivity extends Activity {
                         _y = view.getY() - event.getRawY();
                         break;
                     case MotionEvent.ACTION_MOVE:
-                        if (event.getRawX() + _x > 0 && event.getRawY() + _y > 0 && event.getRawX() + _x + drag_image.getWidth() < getScreenWidth() && event.getRawY() + _y + drag_image.getHeight() < getScreenHeight()) {
+
+                        if (event.getRawX() + _x > 0 && event.getRawY() + _y > 0 && event.getRawX() + _x + drag_image.getWidth() < getScreenWidth() && event.getRawY() + _y + drag_image.getHeight() < panel_2D.getHeight()) {
                             view.animate().x(event.getRawX() + _x).y(event.getRawY() + _y).setDuration(0).start();
                         }
                         break;
@@ -171,7 +175,6 @@ public class SheetMusicActivity extends Activity {
         play_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.wtf("playing state", Integer.toString(player.playstate));
                 if (player.playstate == MidiPlayer.playing) {
                     play_button.setImageDrawable(getResources().getDrawable(R.drawable.play));
                     player.Pause();
@@ -179,8 +182,6 @@ public class SheetMusicActivity extends Activity {
                     play_button.setImageDrawable(getResources().getDrawable(R.drawable.pause));
                     player.Play();
                 }
-
-                Log.wtf("play?", "yo");
             }
         });
     }

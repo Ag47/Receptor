@@ -47,7 +47,6 @@ public final class R {
         public static final int two=0x7f020017;
     }
     public static final class id {
-        public static final int background_image=0x7f070001;
         public static final int browse_files=0x7f07000e;
         public static final int choose_song=0x7f07000a;
         public static final int choose_song_icon=0x7f070005;
@@ -59,6 +58,7 @@ public final class R {
         public static final int help_webview=0x7f070009;
         public static final int name_filter=0x7f070004;
         public static final int pageView=0x7f070000;
+        public static final int panel2D=0x7f070001;
         public static final int play_button=0x7f070003;
         public static final int save_images=0x7f070010;
         public static final int save_images_descr=0x7f07000b;
