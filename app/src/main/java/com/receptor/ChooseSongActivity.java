@@ -12,15 +12,23 @@
 
 package com.receptor;
 
-import android.app.*;
-import android.os.*;
-import android.widget.*;
-import android.content.*;
-import org.json.*;
-import android.graphics.*;
-import android.graphics.drawable.*;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.TabActivity;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Bundle;
+import android.widget.TabHost;
 
-/** @class ChooseSongActivity
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+/**
+ * @class ChooseSongActivity
  * The ChooseSongActivity class is a tabbed view for choosing a song to play.
  * There are 3 tabs:
  * - All    (AllSongsActivity)    : Display a list of all songs
@@ -36,7 +44,7 @@ public class ChooseSongActivity extends TabActivity {
         globalActivity = this;
         super.onCreate(state);
 
-       
+
         Bitmap allFilesIcon = BitmapFactory.decodeResource(this.getResources(), R.drawable.allfilesicon);
         Bitmap recentFilesIcon = BitmapFactory.decodeResource(this.getResources(), R.drawable.recentfilesicon);
         Bitmap browseFilesIcon = BitmapFactory.decodeResource(this.getResources(), R.drawable.browsefilesicon);
@@ -74,21 +82,24 @@ public class ChooseSongActivity extends TabActivity {
     }
 
 
-    /** Show an error dialog with the given message */
+    /**
+     * Show an error dialog with the given message
+     */
     public static void showErrorDialog(String message, Activity activity) {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         builder.setMessage(message);
         builder.setCancelable(false);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-           public void onClick(DialogInterface dialog, int id) {
-           }
+            public void onClick(DialogInterface dialog, int id) {
+            }
         });
         AlertDialog alert = builder.create();
         alert.show();
     }
 
-    /** Save the given FileUri into the "recentFiles" preferences.
-     *  Save a maximum of 10 recent files.
+    /**
+     * Save the given FileUri into the "recentFiles" preferences.
+     * Save a maximum of 10 recent files.
      */
     public void updateRecentFile(FileUri recentfile) {
         try {
@@ -98,8 +109,7 @@ public class ChooseSongActivity extends TabActivity {
             String recentFilesString = settings.getString("recentFiles", null);
             if (recentFilesString != null) {
                 prevRecentFiles = new JSONArray(recentFilesString);
-            }
-            else {
+            } else {
                 prevRecentFiles = new JSONArray();
             }
             JSONArray recentFiles = new JSONArray();
@@ -109,16 +119,14 @@ public class ChooseSongActivity extends TabActivity {
                 if (i >= 10) {
                     break; // only store 10 most recent files
                 }
-                JSONObject file = prevRecentFiles.getJSONObject(i); 
+                JSONObject file = prevRecentFiles.getJSONObject(i);
                 if (!FileUri.equalJson(recentFileJson, file)) {
                     recentFiles.put(file);
                 }
             }
-            editor.putString("recentFiles", recentFiles.toString() );
+            editor.putString("recentFiles", recentFiles.toString());
             editor.commit();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
         }
     }
 }
-
