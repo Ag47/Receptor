@@ -17,33 +17,80 @@ limitations under the License.
     android:id="@+id/pageView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
-    android:fitsSystemWindows="true">
+    android:background="#A4A4A4">
 
     <RelativeLayout
-        android:id="@+id/panel2D"
+        android:id="@+id/upper_layout"
         android:layout_width="match_parent"
         android:layout_height="384dp">
 
-        <ImageView
-            android:id="@+id/drag_button"
-            android:layout_width="144dp"
-            android:layout_height="144dp"
-            android:layout_centerInParent="true"
-            android:src="@drawable/drag_button" />
+        <RelativeLayout
+            android:id="@+id/panel2D"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/drag_button"
+                android:layout_width="144dp"
+                android:layout_height="144dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/drag_button" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/camera_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+
+
+            android:visibility="visible">
+
+
+
+                <com.receptor.camera.CameraSourcePreview
+                    android:id="@+id/preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.receptor.camera.GraphicOverlay
+                        android:id="@+id/faceOverlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </com.receptor.camera.CameraSourcePreview>
+
+        </RelativeLayout>
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/panel2D">
+        android:layout_height="match_parent"
+        android:layout_below="@id/upper_layout"
+        android:background="#3D3D3D">
 
-        <ImageView
-            android:id="@+id/play_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:src="@drawable/play" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <ImageView
+                android:id="@+id/switch_face"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/ic_camera_front_black_48dp" />
+
+            <ImageView
+                android:id="@+id/play_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/play" />
+        </LinearLayout>
     </RelativeLayout>
 
 </RelativeLayout>
