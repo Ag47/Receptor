@@ -756,14 +756,15 @@ public class MidiPlayer extends LinearLayout {
     void DoStop() {
         playstate = stopped;
         timer.removeCallbacks(TimerCallback);
-        sheet.ShadeNotes(-10, (int) prevPulseTime, SheetMusic.DontScroll);
-        sheet.ShadeNotes(-10, (int) currentPulseTime, SheetMusic.DontScroll);
-        piano.ShadeNotes(-10, (int) prevPulseTime);
-        piano.ShadeNotes(-10, (int) currentPulseTime);
+//        sheet.ShadeNotes(-10, (int) prevPulseTime, SheetMusic.DontScroll);
+//        sheet.ShadeNotes(-10, (int) currentPulseTime, SheetMusic.DontScroll);
+//        piano.ShadeNotes(-10, (int) prevPulseTime);
+//        piano.ShadeNotes(-10, (int) currentPulseTime);
+        arousal = -1;
         startPulseTime = 0;
         currentPulseTime = 0;
         prevPulseTime = 0;
-        setVisibility(View.VISIBLE);
+//        setVisibility(View.VISIBLE);
         StopSound();
     }
 

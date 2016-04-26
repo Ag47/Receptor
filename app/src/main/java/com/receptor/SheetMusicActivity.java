@@ -105,7 +105,15 @@ public class SheetMusicActivity extends Activity {
     // permission request codes need to be < 256
     private static final int RC_HANDLE_CAMERA_PERM = 2;
 
-    public static int happiness_index = 1;
+    /**
+     * 0 for stopped / not playing, 1 for playing
+     **/
+    public static int playing_state = 0;
+
+    /**
+     * 1 for 2D panel, 2 for face detection
+     **/
+    private int emotion_mode = 1;
 
 
     /**
@@ -198,19 +206,25 @@ public class SheetMusicActivity extends Activity {
         });
 
         player = new MidiPlayer(this);
-
+        Log.wtf("playing state original: ", Integer.toString(player.playstate));
         player.SetMidiFile(midifile, options, sheet);
 
         play_button = (ImageView) findViewById(R.id.play_button);
         play_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (player.playstate == MidiPlayer.playing) {
-                    play_button.setImageDrawable(getResources().getDrawable(R.drawable.ic_play_circle_outline_black_24dp));
-                    player.Pause();
+                if (playing_state == 1) {
+                    play_button.setImageDrawable(getResources().getDrawable(R.drawable.ic_play_arrow_white_48dp));
+                    playing_state = 0;
+//                    player.Pause();
+                    player.DoStop();
+                    Log.wtf("playing stateAA: ", Integer.toString(player.playstate));
                 } else {
-                    play_button.setImageDrawable(getResources().getDrawable(R.drawable.ic_pause_circle_outline_black_24dp));
+                    play_button.setImageDrawable(getResources().getDrawable(R.drawable.ic_stop_white_48dp));
+                    Log.wtf("playing stateSDJKFHB: ", Integer.toString(player.playstate));
+                    playing_state = 1;
                     player.Play();
+                    Log.wtf("playing state: ", Integer.toString(player.playstate));
                 }
             }
         });
@@ -220,19 +234,32 @@ public class SheetMusicActivity extends Activity {
         switch_camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                camera_view.setVisibility(View.VISIBLE);
-                panel_2D.setVisibility(View.GONE);
+
                 mPreview = (CameraSourcePreview) findViewById(R.id.preview);
                 mGraphicOverlay = (GraphicOverlay) findViewById(R.id.faceOverlay);
 
                 // Check for the camera permission before accessing the camera.  If the
                 // permission is not granted yet, request permission.
                 int rc = ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA);
-                if (rc == PackageManager.PERMISSION_GRANTED) {
-                    createCameraSource();
-                    startCameraSource();
-                } else {
-                    requestCameraPermission();
+
+                if (emotion_mode == 1) {
+                    camera_view.setVisibility(View.VISIBLE);
+                    panel_2D.setVisibility(View.GONE);
+                    if (rc == PackageManager.PERMISSION_GRANTED) {
+                        createCameraSource();
+                        startCameraSource();
+                        switch_camera.setImageDrawable(getResources().getDrawable(R.drawable.ic_aspect_ratio_white_48dp));
+                        emotion_mode = 2;
+                    } else {
+                        requestCameraPermission();
+                    }
+                } else{
+                    panel_2D.setVisibility(View.VISIBLE);
+                    mPreview.stop();
+                    switch_camera.setImageDrawable(getResources().getDrawable(R.drawable.ic_face_white_48dp));
+                    mCameraSource.release();
+                    emotion_mode = 1;
+                    camera_view.setVisibility(View.GONE);
                 }
             }
         });
@@ -492,8 +519,11 @@ public class SheetMusicActivity extends Activity {
     protected void onPause() {
         if (player != null) {
             player.Pause();
+            player.DoStop();
         }
-        mPreview.stop();
+        if (mPreview != null)
+            mPreview.stop();
+
         super.onPause();
     }
 

@@ -142,7 +142,7 @@ class FaceGraphic extends GraphicOverlay.Graphic {
     }
 
     private void goUpdate(int x, int y) {
-        if (interval && x != happiness) {
+        if (interval && x != happiness && SheetMusicActivity.playing_state == 1) {
             midiPlayer.update(x, y);
             happiness = x;
         }

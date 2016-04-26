@@ -76,15 +76,16 @@ limitations under the License.
                 android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:src="@drawable/ic_camera_front_black_48dp" />
+                android:src="@drawable/ic_face_white_48dp" />
 
             <ImageView
                 android:id="@+id/play_button"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="128dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:src="@drawable/play" />
+
+                android:src="@drawable/ic_play_arrow_white_48dp" />
         </LinearLayout>
     </RelativeLayout>
 
