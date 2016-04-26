@@ -22,8 +22,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2a1866f-ce95-43f2-9cd2-a6d56f5b4577" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/MidiFile.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/MidiFile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/MidiOptions.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/MidiOptions.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/FaceGraphic.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/FaceGraphic.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/MidiPlayer$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/MidiPlayer$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/MidiPlayer$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/MidiPlayer$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/MidiPlayer$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/MidiPlayer$3.class" />
@@ -34,7 +33,19 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/MidiPlayer$8.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/MidiPlayer$8.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/MidiPlayer$9.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/MidiPlayer$9.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/MidiPlayer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/MidiPlayer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/PairInt.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/PairInt.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/Piano.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/Piano.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$8.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$9.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$GraphicFaceTracker.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$GraphicFaceTracker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$GraphicFaceTrackerFactory.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity$GraphicFaceTrackerFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/receptor/SheetMusicActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
@@ -42,15 +53,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/debug/debug_e657241f7330ba778f03c6b28fd028e3aed343c9.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/debug/debug_e657241f7330ba778f03c6b28fd028e3aed343c9.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/receptor/MidiFile.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/receptor/MidiFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/receptor/MidiOptions.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/receptor/MidiOptions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/receptor/FaceGraphic.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/receptor/FaceGraphic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/receptor/camera/GraphicOverlay.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/receptor/camera/GraphicOverlay.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/receptor/MidiPlayer.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/receptor/MidiPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/activity_full_player.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/activity_full_player.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_full_player.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_full_player.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/receptor/Piano.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/receptor/Piano.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/receptor/SheetMusicActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/receptor/SheetMusicActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MidiSheetMusic-2.6-android-src.iws" />
@@ -72,53 +80,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MidiPlayer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/MidiPlayer.java">
+      <file leaf-file-name="SheetMusicActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/SheetMusicActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-225.55556">
-              <caret line="416" column="0" selection-start-line="416" selection-start-column="0" selection-end-line="416" selection-end-column="0" />
+            <state vertical-scroll-proportion="-12.185185">
+              <caret line="704" column="17" selection-start-line="704" selection-start-column="17" selection-end-line="704" selection-end-column="17" />
               <folding>
+                <element signature="e#0#27564#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#8052#8172#0" expanded="true" />
-                <element signature="e#8171#8172#0" expanded="true" />
-                <element signature="e#8494#8612#0" expanded="true" />
-                <element signature="e#8611#8612#0" expanded="true" />
-                <element signature="e#8941#9059#0" expanded="true" />
-                <element signature="e#9058#9059#0" expanded="true" />
-                <element signature="e#9424#9549#0" expanded="true" />
-                <element signature="e#9548#9549#0" expanded="true" />
-                <element signature="e#10705#10843#0" expanded="true" />
-                <element signature="e#10842#10843#0" expanded="true" />
-                <element signature="e#12984#12985#0" expanded="true" />
-                <element signature="e#13009#13010#0" expanded="true" />
-                <element signature="e#14025#14314#0" expanded="true" />
-                <element signature="e#14313#14314#0" expanded="true" />
+                <element signature="e#7428#7972#0" expanded="true" />
+                <element signature="e#7971#7972#0" expanded="true" />
+                <element signature="method#createView#0;class#SheetMusicActivity#0" expanded="false" />
+                <element signature="e#13130#13334#0" expanded="true" />
+                <element signature="e#13333#13334#0" expanded="true" />
+                <element signature="method#saveAsImages#0;class#SheetMusicActivity#0" expanded="false" />
+                <element signature="method#requestCameraPermission#0;class#SheetMusicActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SheetMusicActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/SheetMusicActivity.java">
+      <file leaf-file-name="MidiPlayer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/MidiPlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.111111">
-              <caret line="119" column="45" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
+            <state vertical-scroll-proportion="-2.851852">
+              <caret line="642" column="24" selection-start-line="642" selection-start-column="24" selection-end-line="642" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8157#9053#0" expanded="true" />
-                <element signature="e#9052#9053#0" expanded="true" />
-                <element signature="method#createView#0;class#SheetMusicActivity#0" expanded="false" />
-                <element signature="e#11797#11798#0" expanded="true" />
-                <element signature="e#11826#11827#0" expanded="true" />
-                <element signature="e#13027#13051#0" expanded="true" />
-                <element signature="method#saveAsImages#0;class#SheetMusicActivity#0" expanded="false" />
-                <element signature="method#requestCameraPermission#0;class#SheetMusicActivity#0" expanded="false" />
-                <element signature="e#20010#20046#0" expanded="true" />
-                <element signature="e#20119#20130#0" expanded="true" />
-                <element signature="e#23600#23755#0" expanded="true" />
-                <element signature="e#23754#23755#0" expanded="true" />
-                <element signature="e#23903#23932#0" expanded="true" />
-                <element signature="e#23969#23980#0" expanded="true" />
+                <element signature="e#8416#8536#0" expanded="true" />
+                <element signature="e#8535#8536#0" expanded="true" />
+                <element signature="e#8858#8976#0" expanded="true" />
+                <element signature="e#8975#8976#0" expanded="true" />
+                <element signature="e#9305#9423#0" expanded="true" />
+                <element signature="e#9422#9423#0" expanded="true" />
+                <element signature="e#9780#9905#0" expanded="true" />
+                <element signature="e#9904#9905#0" expanded="true" />
+                <element signature="e#11055#11193#0" expanded="true" />
+                <element signature="e#11192#11193#0" expanded="true" />
+                <element signature="e#13312#13313#0" expanded="true" />
+                <element signature="e#13337#13338#0" expanded="true" />
+                <element signature="e#14365#14678#0" expanded="true" />
+                <element signature="e#14677#14678#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,87 +130,24 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/FaceGraphic.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+              <caret line="158" column="40" selection-start-line="158" selection-start-column="40" selection-end-line="158" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2438#2439#0" expanded="true" />
-                <element signature="e#2466#2467#0" expanded="true" />
+                <element signature="e#2588#2589#0" expanded="true" />
+                <element signature="e#2616#2617#0" expanded="true" />
+                <element signature="e#4903#5123#0" expanded="true" />
+                <element signature="e#5122#5123#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MidiFile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/MidiFile.java">
+      <file leaf-file-name="GraphicOverlay.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/camera/GraphicOverlay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="202" column="10" selection-start-line="202" selection-start-column="10" selection-end-line="202" selection-end-column="10" />
-              <folding>
-                <element signature="e#18456#18467#0" expanded="true" />
-                <element signature="e#32777#32799#0" expanded="true" />
-                <element signature="e#33019#33030#0" expanded="true" />
-                <element signature="e#34856#34878#0" expanded="true" />
-                <element signature="e#35082#35093#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8700696">
-              <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.2300195">
+              <caret line="148" column="30" selection-start-line="148" selection-start-column="30" selection-end-line="148" selection-end-column="30" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.3333335">
-              <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_full_player.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_full_player.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.310345">
-              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding>
-                <element signature="e#995#1441#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
-              <folding>
-                <element signature="e#480#498#0" expanded="true" />
-                <element signature="e#603#642#0" expanded="true" />
-                <element signature="e#928#946#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -2076,14 +2015,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/midisheetmusic/NoteData.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/midisheetmusic/SheetMusicActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/midisheetmusic/MidiPlayer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/receptor/camera/GraphicOverlay.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_full_player.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/receptor/Piano.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/receptor/SheetMusicActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/receptor/FaceGraphic.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_full_player.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/receptor/MidiPlayer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/receptor/camera/GraphicOverlay.java" />
       </list>
     </option>
   </component>
@@ -2299,6 +2239,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MidiSheetMusic-2.6-android-src" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="receptor" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camera" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -2324,6 +2286,8 @@
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_23" />
     <property name="FullScreen" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/android-UniversalMusicPlayer-master/android-UniversalMusicPlayer-master" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -2550,18 +2514,27 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4305211" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4305211" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33498758" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964234" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
@@ -2569,7 +2542,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30769232" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2611,20 +2584,20 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8052#8172#0" expanded="true" />
-            <element signature="e#8171#8172#0" expanded="true" />
-            <element signature="e#8494#8612#0" expanded="true" />
-            <element signature="e#8611#8612#0" expanded="true" />
-            <element signature="e#8941#9059#0" expanded="true" />
-            <element signature="e#9058#9059#0" expanded="true" />
-            <element signature="e#9424#9549#0" expanded="true" />
-            <element signature="e#9548#9549#0" expanded="true" />
-            <element signature="e#10705#10843#0" expanded="true" />
-            <element signature="e#10842#10843#0" expanded="true" />
-            <element signature="e#12984#12985#0" expanded="true" />
-            <element signature="e#13009#13010#0" expanded="true" />
-            <element signature="e#14025#14314#0" expanded="true" />
-            <element signature="e#14313#14314#0" expanded="true" />
+            <element signature="e#8416#8536#0" expanded="true" />
+            <element signature="e#8535#8536#0" expanded="true" />
+            <element signature="e#8858#8976#0" expanded="true" />
+            <element signature="e#8975#8976#0" expanded="true" />
+            <element signature="e#9305#9423#0" expanded="true" />
+            <element signature="e#9422#9423#0" expanded="true" />
+            <element signature="e#9780#9905#0" expanded="true" />
+            <element signature="e#9904#9905#0" expanded="true" />
+            <element signature="e#11055#11193#0" expanded="true" />
+            <element signature="e#11192#11193#0" expanded="true" />
+            <element signature="e#13312#13313#0" expanded="true" />
+            <element signature="e#13337#13338#0" expanded="true" />
+            <element signature="e#14365#14678#0" expanded="true" />
+            <element signature="e#14677#14678#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2634,21 +2607,15 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
           <folding>
+            <element signature="e#0#27564#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#8157#9053#0" expanded="true" />
-            <element signature="e#9052#9053#0" expanded="true" />
+            <element signature="e#7428#7972#0" expanded="true" />
+            <element signature="e#7971#7972#0" expanded="true" />
             <element signature="method#createView#0;class#SheetMusicActivity#0" expanded="false" />
-            <element signature="e#11797#11798#0" expanded="true" />
-            <element signature="e#11826#11827#0" expanded="true" />
-            <element signature="e#13027#13051#0" expanded="true" />
+            <element signature="e#13130#13334#0" expanded="true" />
+            <element signature="e#13333#13334#0" expanded="true" />
             <element signature="method#saveAsImages#0;class#SheetMusicActivity#0" expanded="false" />
             <element signature="method#requestCameraPermission#0;class#SheetMusicActivity#0" expanded="false" />
-            <element signature="e#20010#20046#0" expanded="true" />
-            <element signature="e#20119#20130#0" expanded="true" />
-            <element signature="e#23600#23755#0" expanded="true" />
-            <element signature="e#23754#23755#0" expanded="true" />
-            <element signature="e#23903#23932#0" expanded="true" />
-            <element signature="e#23969#23980#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2667,20 +2634,20 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8052#8172#0" expanded="true" />
-            <element signature="e#8171#8172#0" expanded="true" />
-            <element signature="e#8494#8612#0" expanded="true" />
-            <element signature="e#8611#8612#0" expanded="true" />
-            <element signature="e#8941#9059#0" expanded="true" />
-            <element signature="e#9058#9059#0" expanded="true" />
-            <element signature="e#9424#9549#0" expanded="true" />
-            <element signature="e#9548#9549#0" expanded="true" />
-            <element signature="e#10705#10843#0" expanded="true" />
-            <element signature="e#10842#10843#0" expanded="true" />
-            <element signature="e#12984#12985#0" expanded="true" />
-            <element signature="e#13009#13010#0" expanded="true" />
-            <element signature="e#14025#14314#0" expanded="true" />
-            <element signature="e#14313#14314#0" expanded="true" />
+            <element signature="e#8416#8536#0" expanded="true" />
+            <element signature="e#8535#8536#0" expanded="true" />
+            <element signature="e#8858#8976#0" expanded="true" />
+            <element signature="e#8975#8976#0" expanded="true" />
+            <element signature="e#9305#9423#0" expanded="true" />
+            <element signature="e#9422#9423#0" expanded="true" />
+            <element signature="e#9780#9905#0" expanded="true" />
+            <element signature="e#9904#9905#0" expanded="true" />
+            <element signature="e#11055#11193#0" expanded="true" />
+            <element signature="e#11192#11193#0" expanded="true" />
+            <element signature="e#13312#13313#0" expanded="true" />
+            <element signature="e#13337#13338#0" expanded="true" />
+            <element signature="e#14365#14678#0" expanded="true" />
+            <element signature="e#14677#14678#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2699,20 +2666,20 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8052#8172#0" expanded="true" />
-            <element signature="e#8171#8172#0" expanded="true" />
-            <element signature="e#8494#8612#0" expanded="true" />
-            <element signature="e#8611#8612#0" expanded="true" />
-            <element signature="e#8941#9059#0" expanded="true" />
-            <element signature="e#9058#9059#0" expanded="true" />
-            <element signature="e#9424#9549#0" expanded="true" />
-            <element signature="e#9548#9549#0" expanded="true" />
-            <element signature="e#10705#10843#0" expanded="true" />
-            <element signature="e#10842#10843#0" expanded="true" />
-            <element signature="e#12984#12985#0" expanded="true" />
-            <element signature="e#13009#13010#0" expanded="true" />
-            <element signature="e#14025#14314#0" expanded="true" />
-            <element signature="e#14313#14314#0" expanded="true" />
+            <element signature="e#8416#8536#0" expanded="true" />
+            <element signature="e#8535#8536#0" expanded="true" />
+            <element signature="e#8858#8976#0" expanded="true" />
+            <element signature="e#8975#8976#0" expanded="true" />
+            <element signature="e#9305#9423#0" expanded="true" />
+            <element signature="e#9422#9423#0" expanded="true" />
+            <element signature="e#9780#9905#0" expanded="true" />
+            <element signature="e#9904#9905#0" expanded="true" />
+            <element signature="e#11055#11193#0" expanded="true" />
+            <element signature="e#11192#11193#0" expanded="true" />
+            <element signature="e#13312#13313#0" expanded="true" />
+            <element signature="e#13337#13338#0" expanded="true" />
+            <element signature="e#14365#14678#0" expanded="true" />
+            <element signature="e#14677#14678#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2731,20 +2698,20 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8052#8172#0" expanded="true" />
-            <element signature="e#8171#8172#0" expanded="true" />
-            <element signature="e#8494#8612#0" expanded="true" />
-            <element signature="e#8611#8612#0" expanded="true" />
-            <element signature="e#8941#9059#0" expanded="true" />
-            <element signature="e#9058#9059#0" expanded="true" />
-            <element signature="e#9424#9549#0" expanded="true" />
-            <element signature="e#9548#9549#0" expanded="true" />
-            <element signature="e#10705#10843#0" expanded="true" />
-            <element signature="e#10842#10843#0" expanded="true" />
-            <element signature="e#12984#12985#0" expanded="true" />
-            <element signature="e#13009#13010#0" expanded="true" />
-            <element signature="e#14025#14314#0" expanded="true" />
-            <element signature="e#14313#14314#0" expanded="true" />
+            <element signature="e#8416#8536#0" expanded="true" />
+            <element signature="e#8535#8536#0" expanded="true" />
+            <element signature="e#8858#8976#0" expanded="true" />
+            <element signature="e#8975#8976#0" expanded="true" />
+            <element signature="e#9305#9423#0" expanded="true" />
+            <element signature="e#9422#9423#0" expanded="true" />
+            <element signature="e#9780#9905#0" expanded="true" />
+            <element signature="e#9904#9905#0" expanded="true" />
+            <element signature="e#11055#11193#0" expanded="true" />
+            <element signature="e#11192#11193#0" expanded="true" />
+            <element signature="e#13312#13313#0" expanded="true" />
+            <element signature="e#13337#13338#0" expanded="true" />
+            <element signature="e#14365#14678#0" expanded="true" />
+            <element signature="e#14677#14678#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2872,40 +2839,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/SheetMusic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.94152045">
-          <caret line="292" column="25" selection-start-line="0" selection-start-column="0" selection-end-line="1451" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#53336#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#6611#6636#0" expanded="false" />
-            <element signature="e#11263#11273#0" expanded="false" />
-            <element signature="e#12566#12579#0" expanded="false" />
-            <element signature="e#13043#13056#0" expanded="false" />
-            <element signature="e#14277#14290#0" expanded="false" />
-            <element signature="e#17355#17368#0" expanded="false" />
-            <element signature="e#19546#19559#0" expanded="false" />
-            <element signature="e#27658#27665#0" expanded="false" />
-            <element signature="e#29913#29926#0" expanded="false" />
-            <element signature="e#31324#31342#0" expanded="false" />
-            <element signature="e#32325#32332#0" expanded="false" />
-            <element signature="e#33308#33309#0" expanded="false" />
-            <element signature="e#33373#33374#0" expanded="false" />
-            <element signature="e#33982#34006#0" expanded="false" />
-            <element signature="e#34138#34151#0" expanded="false" />
-            <element signature="e#52639#52640#0" expanded="false" />
-            <element signature="e#52665#52666#0" expanded="false" />
-            <element signature="e#52760#52761#0" expanded="false" />
-            <element signature="e#52788#52789#0" expanded="false" />
-            <element signature="e#52894#52895#0" expanded="false" />
-            <element signature="e#52929#52930#0" expanded="false" />
-            <element signature="e#53025#53026#0" expanded="false" />
-            <element signature="e#53061#53062#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/Staff.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.94736844">
@@ -2956,34 +2889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/camera/GraphicOverlay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6748072">
-          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/camera/CameraSourcePreview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11568123">
-          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
-          <folding>
-            <element signature="e#480#498#0" expanded="true" />
-            <element signature="e#603#642#0" expanded="true" />
-            <element signature="e#928#946#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3008,22 +2913,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3333335">
-          <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/8.4.0/jars/classes.jar!/com/google/android/gms/vision/face/Face.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38271606">
@@ -3035,58 +2924,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/FaceGraphic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2438#2439#0" expanded="true" />
-            <element signature="e#2466#2467#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/SheetMusicActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.111111">
-          <caret line="119" column="45" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8157#9053#0" expanded="true" />
-            <element signature="e#9052#9053#0" expanded="true" />
-            <element signature="method#createView#0;class#SheetMusicActivity#0" expanded="false" />
-            <element signature="e#11797#11798#0" expanded="true" />
-            <element signature="e#11826#11827#0" expanded="true" />
-            <element signature="e#13027#13051#0" expanded="true" />
-            <element signature="method#saveAsImages#0;class#SheetMusicActivity#0" expanded="false" />
-            <element signature="method#requestCameraPermission#0;class#SheetMusicActivity#0" expanded="false" />
-            <element signature="e#20010#20046#0" expanded="true" />
-            <element signature="e#20119#20130#0" expanded="true" />
-            <element signature="e#23600#23755#0" expanded="true" />
-            <element signature="e#23754#23755#0" expanded="true" />
-            <element signature="e#23903#23932#0" expanded="true" />
-            <element signature="e#23969#23980#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_full_player.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.310345">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding>
-            <element signature="e#995#1441#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/MidiFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="5.9211135">
           <caret line="202" column="10" selection-start-line="202" selection-start-column="10" selection-end-line="202" selection-end-column="10" />
           <folding>
             <element signature="e#18456#18467#0" expanded="true" />
@@ -3098,27 +2938,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/MidiPlayer.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-225.55556">
-          <caret line="416" column="0" selection-start-line="416" selection-start-column="0" selection-end-line="416" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.38283062">
+          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8052#8172#0" expanded="true" />
-            <element signature="e#8171#8172#0" expanded="true" />
-            <element signature="e#8494#8612#0" expanded="true" />
-            <element signature="e#8611#8612#0" expanded="true" />
-            <element signature="e#8941#9059#0" expanded="true" />
-            <element signature="e#9058#9059#0" expanded="true" />
-            <element signature="e#9424#9549#0" expanded="true" />
-            <element signature="e#9548#9549#0" expanded="true" />
-            <element signature="e#10705#10843#0" expanded="true" />
-            <element signature="e#10842#10843#0" expanded="true" />
-            <element signature="e#12984#12985#0" expanded="true" />
-            <element signature="e#13009#13010#0" expanded="true" />
-            <element signature="e#14025#14314#0" expanded="true" />
-            <element signature="e#14313#14314#0" expanded="true" />
+            <element signature="e#480#498#0" expanded="true" />
+            <element signature="e#603#642#0" expanded="true" />
+            <element signature="e#928#946#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_full_player.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67164177">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="e#995#1441#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42326733">
+          <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17401393">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3126,6 +2983,105 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8700696">
           <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/camera/CameraSourcePreview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12993039">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/Piano.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7842227">
+          <caret line="362" column="8" selection-start-line="362" selection-start-column="8" selection-end-line="362" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/SheetMusic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.4037123">
+          <caret line="968" column="9" selection-start-line="968" selection-start-column="9" selection-end-line="968" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Applications/eclipse/android-sdk-macosx/platforms/android-23/android.jar!/android/view/View.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37931034">
+          <caret line="1715" column="19" selection-start-line="1715" selection-start-column="19" selection-end-line="1715" selection-end-column="19" />
+          <folding>
+            <element signature="e#50201#50202#0" expanded="true" />
+            <element signature="e#50252#50253#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/SheetMusicActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.185185">
+          <caret line="704" column="17" selection-start-line="704" selection-start-column="17" selection-end-line="704" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#27564#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#7428#7972#0" expanded="true" />
+            <element signature="e#7971#7972#0" expanded="true" />
+            <element signature="method#createView#0;class#SheetMusicActivity#0" expanded="false" />
+            <element signature="e#13130#13334#0" expanded="true" />
+            <element signature="e#13333#13334#0" expanded="true" />
+            <element signature="method#saveAsImages#0;class#SheetMusicActivity#0" expanded="false" />
+            <element signature="method#requestCameraPermission#0;class#SheetMusicActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/MidiPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.851852">
+          <caret line="642" column="24" selection-start-line="642" selection-start-column="24" selection-end-line="642" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8416#8536#0" expanded="true" />
+            <element signature="e#8535#8536#0" expanded="true" />
+            <element signature="e#8858#8976#0" expanded="true" />
+            <element signature="e#8975#8976#0" expanded="true" />
+            <element signature="e#9305#9423#0" expanded="true" />
+            <element signature="e#9422#9423#0" expanded="true" />
+            <element signature="e#9780#9905#0" expanded="true" />
+            <element signature="e#9904#9905#0" expanded="true" />
+            <element signature="e#11055#11193#0" expanded="true" />
+            <element signature="e#11192#11193#0" expanded="true" />
+            <element signature="e#13312#13313#0" expanded="true" />
+            <element signature="e#13337#13338#0" expanded="true" />
+            <element signature="e#14365#14678#0" expanded="true" />
+            <element signature="e#14677#14678#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/FaceGraphic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="158" column="40" selection-start-line="158" selection-start-column="40" selection-end-line="158" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2588#2589#0" expanded="true" />
+            <element signature="e#2616#2617#0" expanded="true" />
+            <element signature="e#4903#5123#0" expanded="true" />
+            <element signature="e#5122#5123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/receptor/camera/GraphicOverlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2300195">
+          <caret line="148" column="30" selection-start-line="148" selection-start-column="30" selection-end-line="148" selection-end-column="30" />
           <folding />
         </state>
       </provider>

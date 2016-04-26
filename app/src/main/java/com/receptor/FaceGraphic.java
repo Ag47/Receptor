@@ -19,7 +19,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 
-
 import com.google.android.gms.vision.face.Face;
 import com.receptor.camera.GraphicOverlay;
 
@@ -35,13 +34,13 @@ class FaceGraphic extends GraphicOverlay.Graphic {
     private static final float BOX_STROKE_WIDTH = 5.0f;
 
     private static final int COLOR_CHOICES[] = {
-        Color.BLUE,
-        Color.CYAN,
-        Color.GREEN,
-        Color.MAGENTA,
-        Color.RED,
-        Color.WHITE,
-        Color.YELLOW
+            Color.BLUE,
+            Color.CYAN,
+            Color.GREEN,
+            Color.MAGENTA,
+            Color.RED,
+            Color.WHITE,
+            Color.YELLOW
     };
     private static int mCurrentColorIndex = 0;
 
@@ -53,12 +52,17 @@ class FaceGraphic extends GraphicOverlay.Graphic {
     private int mFaceId;
     private float mFaceHappiness;
 
-    public static int happiness = 1;
-    private boolean emotion_switch = false;
+    public static int happiness = -2;
+    private boolean interval = true;
+    private int refresh_emotion_interval = 5000;
 
-    FaceGraphic(GraphicOverlay overlay) {
+
+    private MidiPlayer midiPlayer;
+
+    FaceGraphic(GraphicOverlay overlay, MidiPlayer mp) {
         super(overlay);
 
+        midiPlayer = mp;
         mCurrentColorIndex = (mCurrentColorIndex + 1) % COLOR_CHOICES.length;
         final int selectedColor = COLOR_CHOICES[mCurrentColorIndex];
 
@@ -73,7 +77,10 @@ class FaceGraphic extends GraphicOverlay.Graphic {
         mBoxPaint.setColor(selectedColor);
         mBoxPaint.setStyle(Paint.Style.STROKE);
         mBoxPaint.setStrokeWidth(BOX_STROKE_WIDTH);
+
+
     }
+
 
     void setId(int id) {
         mFaceId = id;
@@ -108,11 +115,21 @@ class FaceGraphic extends GraphicOverlay.Graphic {
         // Returns a value between 0.0 and 1.0 giving a probability that the face is smiling.
         canvas.drawText("happiness: " + String.format("%.2f", face.getIsSmilingProbability()), x - ID_X_OFFSET, y - ID_Y_OFFSET, mIdPaint);
         canvas.drawText("right eye: " + String.format("%.2f", face.getIsRightEyeOpenProbability()), x + ID_X_OFFSET * 2, y + ID_Y_OFFSET * 2, mIdPaint);
-        canvas.drawText("left eye: " + String.format("%.2f", face.getIsLeftEyeOpenProbability()), x - ID_X_OFFSET*2, y - ID_Y_OFFSET*2, mIdPaint);
+        canvas.drawText("left eye: " + String.format("%.2f", face.getIsLeftEyeOpenProbability()), x - ID_X_OFFSET * 2, y - ID_Y_OFFSET * 2, mIdPaint);
 
 
+        int a;
+        int v;
+        if (face.getIsSmilingProbability() > 0.5) {
+            a = 1;
+            v = 120;
+        } else {
+            a = 0;
+            v = 80;
+        }
 
-
+        if (interval)
+            goUpdate(a, v);
 
         // Draws a bounding box around the face.
         float xOffset = scaleX(face.getWidth() / 2.0f);
@@ -122,6 +139,25 @@ class FaceGraphic extends GraphicOverlay.Graphic {
         float right = x + xOffset;
         float bottom = y + yOffset;
         canvas.drawRect(left, top, right, bottom, mBoxPaint);
-
     }
+
+    private void goUpdate(int x, int y) {
+        if (interval && x != happiness) {
+            midiPlayer.update(x, y);
+            happiness = x;
+        }
+        interval = false;
+
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        // your code here
+                        interval = true;
+                    }
+                },
+                refresh_emotion_interval
+        );
+    }
+
 }

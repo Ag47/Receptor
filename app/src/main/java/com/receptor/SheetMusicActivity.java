@@ -187,7 +187,6 @@ public class SheetMusicActivity extends Activity {
                         // TODO fine tune formula
                         y = (int) (-107.0 / 718.0 * view.getY() + 127.0);
 
-
                         player.update(x, y);
 
                         break;
@@ -688,7 +687,8 @@ public class SheetMusicActivity extends Activity {
 
         GraphicFaceTracker(GraphicOverlay overlay) {
             mOverlay = overlay;
-            mFaceGraphic = new FaceGraphic(overlay);
+            mFaceGraphic = new FaceGraphic(overlay, player);
+
         }
 
         /**

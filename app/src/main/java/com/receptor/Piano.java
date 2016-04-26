@@ -673,8 +673,6 @@ public class Piano extends SurfaceView implements SurfaceHolder.Callback {
         holder.unlockCanvasAndPost(canvas);
     }
 
-
-    /** TODO ?? */
     public void 
     surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
         draw();
