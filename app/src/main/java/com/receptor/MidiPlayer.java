@@ -12,17 +12,31 @@
 
 package com.receptor;
 
-import java.util.*;
-import java.io.*;
-import android.app.*;
-import android.content.*;
-import android.content.res.*;
-import android.util.*;
-import android.graphics.*;
-import android.view.*;
-import android.widget.*;
-import android.os.*;
-import android.media.*;
+import android.app.Activity;
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.Point;
+import android.media.MediaPlayer;
+import android.os.Handler;
+import android.os.SystemClock;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.SeekBar;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Locale;
 
 
 /** @class MidiPlayer
@@ -91,7 +105,7 @@ public class MidiPlayer extends LinearLayout {
     double prevPulseTime;       /** Time (in pulses) music was last at */
     Activity activity;          /** The parent activity. */
 
-    private int valence = -1;        /** 0 for minor, 1 for major **/
+    private int valence = 0;        /** 0 for minor, 1 for major **/
     private int arousal = -1;        /** 20 - 127 **/
     
     /** Load the play/pause/stop button images */
@@ -401,9 +415,16 @@ public class MidiPlayer extends LinearLayout {
             arousal = (int) (180.0/107.0 * (arousal- 20.0) ) + 20;
         }
 
+        Log.wtf("arousal: ", Integer.toString(arousal));
+        Log.wtf("valence: ", Integer.toString(valence));
+
+
         double inverse_tempo_scaled = inverse_tempo * arousal / 100.0;
         // double inverse_tempo_scaled = inverse_tempo * 100.0 / 100.0;
         options.tempo = (int)(1.0 / inverse_tempo_scaled);
+        options.velocity = arousal; //Velocity 0 -127
+        options.transpose = valence; //Major = 0, Minor = 1
+
         pulsesPerMsec = midifile.getTime().getQuarter() * (1000.0 / options.tempo);
 
         try {
@@ -501,7 +522,12 @@ public class MidiPlayer extends LinearLayout {
 
     public void update(int x, int y)
     {
-        valence = x;
+        if(x == 0){
+            valence = 1;
+        }else if(x==1){
+            valence = 0;
+        }
+
         arousal = y;
         long msec = SystemClock.uptimeMillis() - startTime;
         StopSound();

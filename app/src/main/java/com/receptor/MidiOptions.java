@@ -13,10 +13,13 @@
 
 package com.receptor;
 
-import java.io.*;
+import android.graphics.Color;
 
-import org.json.*;
-import android.graphics.*;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.Serializable;
 
 /** @class MidiOptions
  * The MidiOptions class contains the available options for
@@ -46,6 +49,7 @@ public class MidiOptions implements Serializable {
     public boolean showMeasures;     /** Show the measure numbers for each staff */
     public int shifttime;            /** Shift note starttimes by the given amount */
     public int transpose;            /** Shift note key up/down by given amount */
+    public int velocity;
     public int key;                  /** Use the given KeySignature (NoteScale) */
     public TimeSignature time;       /** Use the given time signature (null for default) */
     public TimeSignature defaultTime;  /** The default time signature */
@@ -98,6 +102,7 @@ public class MidiOptions implements Serializable {
         showLyrics = true;
         shifttime = 0;
         transpose = 0;
+        velocity = 70; //Arbitrary default
         time = null;
         defaultTime = midifile.getTime();
         key = -1;
@@ -151,6 +156,7 @@ public class MidiOptions implements Serializable {
             json.put("showNoteLetters", showNoteLetters);
             json.put("transpose", transpose);
             json.put("key", key);
+            json.put("velocity", velocity);
             json.put("combineInterval", combineInterval);
             json.put("shade1Color", shade1Color);
             json.put("shade2Color", shade2Color);
@@ -212,6 +218,7 @@ public class MidiOptions implements Serializable {
             options.showNoteLetters = json.getInt("showNoteLetters");
             options.transpose = json.getInt("transpose");
             options.key = json.getInt("key");
+            options.velocity = json.getInt("velocity");
             options.combineInterval = json.getInt("combineInterval");
             options.shade1Color = json.getInt("shade1Color");
             options.shade2Color = json.getInt("shade2Color");
@@ -257,6 +264,7 @@ public class MidiOptions implements Serializable {
         showNoteLetters = saved.showNoteLetters;
         transpose = saved.transpose;
         key = saved.key;
+        velocity = saved.velocity;
         combineInterval = saved.combineInterval;
         shade1Color = saved.shade1Color;
         shade2Color = saved.shade2Color;
@@ -314,6 +322,7 @@ public class MidiOptions implements Serializable {
         options.showNoteLetters = showNoteLetters;
         options.transpose = transpose;
         options.key = key;
+        options.velocity = velocity;
         options.combineInterval = combineInterval;
         options.shade1Color = shade1Color;
         options.shade2Color = shade2Color;

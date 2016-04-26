@@ -13,8 +13,11 @@
 
 package com.receptor;
 
-import java.io.*;
-import java.util.*;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.Collections;
 
 /** @class Pair - A pair of ints */
 class PairInt {
@@ -1030,15 +1033,37 @@ public class MidiFile {
             newevents.get(tracknum).add(0, mevent);
         }
 
+
+
         /* Change the note number (transpose), instrument, and tempo */
         for (int tracknum = 0; tracknum < newevents.size(); tracknum++) {
             for (MidiEvent mevent : newevents.get(tracknum)) {
+
+                int vel = options.velocity;
+                if (vel < 50){
+                    vel = 50;
+                }else if(vel > 127){
+                    vel = 127;
+                }
+
+                mevent.Velocity = (byte) vel;
                 int num = mevent.Notenumber + options.transpose;
-                if (num < 0)
-                    num = 0;
-                if (num > 127)
-                    num = 127;
-                mevent.Notenumber = (byte)num;
+                int note = NoteScale.FromNumber(mevent.Notenumber);
+
+                if(options.key == -1 && options.transpose == 1) {
+                    //C Major to Minor
+                    if (note == 7 || note == 0) {
+                        num -= 4;
+                    } else {
+                        num -= 3;
+                    }
+
+                    if (num < 0)
+                        num = 0;
+                    if (num > 127)
+                        num = 127;
+                    mevent.Notenumber = (byte) num;
+                }
                 if (!options.useDefaultInstruments) {
                     mevent.Instrument = (byte)instruments[tracknum];
                 }
