@@ -13,6 +13,7 @@
 package com.receptor;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -25,7 +26,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v7.app.AlertDialog;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
@@ -157,13 +157,19 @@ class ScanMidiFiles extends AsyncTask<Integer, Integer, ArrayList<FileUri>> {
 public class AllSongsActivity extends ListActivity implements TextWatcher {
 
     static AllSongsActivity globalActivity;
-    /** The complete list of midi files */
+    /**
+     * The complete list of midi files
+     */
     ArrayList<FileUri> songlist;
 
-    /** Textbox to filter the songs by name */
+    /**
+     * Textbox to filter the songs by name
+     */
     EditText filterText;
 
-    /** Task to scan for midi files */
+    /**
+     * Task to scan for midi files
+     */
     ScanMidiFiles scanner;
 
     IconArrayAdapter<FileUri> adapter;
@@ -183,7 +189,7 @@ public class AllSongsActivity extends ListActivity implements TextWatcher {
         super.onCreate(state);
         setContentView(R.layout.choose_song);
         setTitle("Receptor: Choose Song");
-
+        
         /* If we're restarting from an orientation change,
          * load the saved song list.
          */
@@ -234,8 +240,9 @@ public class AllSongsActivity extends ListActivity implements TextWatcher {
     }
 
 
-    /** Scan the SD card for midi songs.  Since this is a lengthy
-     *  operation, perform the scan in a background thread.
+    /**
+     * Scan the SD card for midi songs.  Since this is a lengthy
+     * operation, perform the scan in a background thread.
      */
     public void scanForSongs() {
         if (scanner != null) {
@@ -271,27 +278,28 @@ public class AllSongsActivity extends ListActivity implements TextWatcher {
         scanner = null;
     }
 
-    /** Load all the sample midi songs from the assets directory into songlist.
-     *  Look for files ending with ".mid"
+    /**
+     * Load all the sample midi songs from the assets directory into songlist.
+     * Look for files ending with ".mid"
      */
     void loadAssetMidiFiles() {
         try {
             AssetManager assets = this.getResources().getAssets();
             String[] files = assets.list("");
-            for (String path: files) {
+            for (String path : files) {
                 if (path.endsWith(".mid")) {
                     Uri uri = Uri.parse("file:///android_asset/" + path);
                     FileUri file = new FileUri(uri, path);
                     songlist.add(file);
                 }
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
         }
     }
 
 
-    /** Look for midi files (with mime-type audio/midi) in the
+    /**
+     * Look for midi files (with mime-type audio/midi) in the
      * internal/external storage. Add them to the songlist.
      */
     private void loadMidiFilesFromProvider(Uri content_uri) {
@@ -329,10 +337,11 @@ public class AllSongsActivity extends ListActivity implements TextWatcher {
         cursor.close();
     }
 
-    /** When a song is clicked on, start a SheetMusicActivity.
-     *  Read the raw byte[] data of the midi file.
-     *  Pass the raw byte[] data as a parameter in the Intent.
-     *  Pass the midi file Title as a parameter in the Intent.
+    /**
+     * When a song is clicked on, start a SheetMusicActivity.
+     * Read the raw byte[] data of the midi file.
+     * Pass the raw byte[] data as a parameter in the Intent.
+     * Pass the midi file Title as a parameter in the Intent.
      */
     @Override
     protected void onListItemClick(ListView parent, View view, int position, long id) {
@@ -346,8 +355,9 @@ public class AllSongsActivity extends ListActivity implements TextWatcher {
     }
 
 
-    /** As text is entered in the filter box, filter the list of
-     *  midi songs to display.
+    /**
+     * As text is entered in the filter box, filter the list of
+     * midi songs to display.
      */
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -363,7 +373,9 @@ public class AllSongsActivity extends ListActivity implements TextWatcher {
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
     }
 
-    /** Start the FileBrowser activity, which is used to select a midi file */
+    /**
+     * Start the FileBrowser activity, which is used to select a midi file
+     */
     void browseForSongs() {
         Intent intent = new Intent(this, FileBrowserActivity.class);
         startActivity(intent);
@@ -386,7 +398,9 @@ public class AllSongsActivity extends ListActivity implements TextWatcher {
     }
 
 
-    /** Show an error dialog with the given message */
+    /**
+     * Show an error dialog with the given message
+     */
     public static void showErrorDialog(String message, Activity activity) {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         builder.setMessage(message);

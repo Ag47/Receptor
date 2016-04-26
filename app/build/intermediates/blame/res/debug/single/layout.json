@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/place_autocomplete_progress.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout/place_autocomplete_progress.xml"
-    },
-    {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/place_autocomplete_progress.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout/place_autocomplete_progress.xml"
     },
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/mr_media_route_list_item.xml",
@@ -44,32 +44,32 @@
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/design/23.0.0/res/layout/design_navigation_item_separator.xml"
     },
     {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/build/intermediates/res/merged/debug/layout/help.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/src/main/res/layout/help.xml"
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_media.xml"
     },
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/notification_template_lines.xml",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_lines.xml"
     },
     {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_media.xml"
-    },
-    {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/build/intermediates/res/merged/debug/layout/file_browser.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/src/main/res/layout/file_browser.xml"
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/build/intermediates/res/merged/debug/layout/help.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/src/main/res/layout/help.xml"
     },
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/build/intermediates/res/merged/debug/layout/activity_full_player.xml",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/src/main/res/layout/activity_full_player.xml"
     },
     {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_list_menu_item_icon.xml"
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/build/intermediates/res/merged/debug/layout/file_browser.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/src/main/res/layout/file_browser.xml"
     },
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_list_menu_item_icon.xml"
     },
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/choose_song_item.xml",
@@ -100,100 +100,100 @@
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_select_dialog_material.xml"
     },
     {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/build/intermediates/res/merged/debug/layout/color_preference.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/src/main/res/layout/color_preference.xml"
-    },
-    {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/save_images_dialog.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/layout/save_images_dialog.xml"
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_mode_bar.xml"
     },
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_mode_bar.xml"
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/save_images_dialog.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/layout/save_images_dialog.xml"
     },
     {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/build/intermediates/res/merged/debug/layout/choose_song.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/src/main/res/layout/choose_song.xml"
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/build/intermediates/res/merged/debug/layout/color_preference.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/src/main/res/layout/color_preference.xml"
     },
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/help.xml",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/layout/help.xml"
     },
     {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/design/23.0.0/res/layout/design_layout_snackbar.xml"
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/build/intermediates/res/merged/debug/layout/choose_song.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/MidiSheetMusic-2.6-android-src/app/src/main/res/layout/choose_song.xml"
     },
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/mr_media_route_controller_material_dialog_b.xml",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/layout/mr_media_route_controller_material_dialog_b.xml"
     },
     {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_activity_chooser_view.xml"
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/design/23.0.0/res/layout/design_layout_snackbar.xml"
     },
     {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_bar_view_list_nav_layout.xml"
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_activity_chooser_view.xml"
     },
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar_include.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/design/23.0.0/res/layout/design_layout_snackbar_include.xml"
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_bar_view_list_nav_layout.xml"
     },
     {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/select_dialog_singlechoice_material.xml"
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar_include.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/design/23.0.0/res/layout/design_layout_snackbar_include.xml"
     },
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/design_navigation_item.xml",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/design/23.0.0/res/layout/design_navigation_item.xml"
     },
     {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/design/23.0.0/res/layout/design_layout_tab_text.xml"
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/select_dialog_singlechoice_material.xml"
     },
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/select_dialog_item_material.xml"
     },
     {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_activity_chooser_view_list_item.xml"
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/design/23.0.0/res/layout/design_layout_tab_text.xml"
     },
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_media_action.xml"
     },
     {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/color_preference.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/layout/color_preference.xml"
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_activity_chooser_view_list_item.xml"
     },
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/design_navigation_item_header.xml",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/design/23.0.0/res/layout/design_navigation_item_header.xml"
     },
     {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/color_preference.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/layout/color_preference.xml"
+    },
+    {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_bar_up_container.xml"
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_big_media.xml"
     },
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow.xml",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_big_media.xml"
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_bar_up_container.xml"
     },
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
@@ -204,12 +204,12 @@
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_dialog_title_material.xml"
     },
     {
-        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
-        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_screen_content_include.xml"
-    },
-    {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_screen_content_include.xml"
     },
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
