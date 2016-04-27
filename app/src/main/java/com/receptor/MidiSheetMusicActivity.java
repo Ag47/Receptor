@@ -13,13 +13,14 @@
 package com.receptor;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.view.*;
-import android.widget.*;
-import android.content.*;
-import android.content.res.*;
+import android.view.View;
+import android.widget.Button;
 
-/** @class MidiSheetMusicActivity
+/**
+ * @class MidiSheetMusicActivity
  * This is the launch activity for MidiSheetMusic.
  * It simply displays the splash screen, and a button to choose a song.
  */
@@ -40,23 +41,28 @@ public class MidiSheetMusicActivity extends Activity {
         );
     }
 
-    /** Start the ChooseSongActivity when the "Choose Song" button is clicked */
+    /**
+     * Start the ChooseSongActivity when the "Choose Song" button is clicked
+     */
     private void chooseSong() {
-        Intent intent = new Intent(this, ChooseSongActivity.class);
+        Intent intent = new Intent(this, AllSongsActivity.class);
         startActivity(intent);
     }
 
-    /** Load all the resource images */
+    /**
+     * Load all the resource images
+     */
     private void loadImages() {
         ClefSymbol.LoadImages(this);
         TimeSigSymbol.LoadImages(this);
         MidiPlayer.LoadImages(this);
     }
 
-    /** Always use landscape mode for this activity. */
+    /**
+     * Always use landscape mode for this activity.
+     */
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
     }
 }
-

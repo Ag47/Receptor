@@ -12,26 +12,41 @@
 
 package com.receptor;
 
-import java.io.*;
-import java.util.*;
-import android.net.*;
-import android.app.*;
-import android.os.*;
-import android.widget.*;
-import android.view.*;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ListActivity;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.res.AssetManager;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.text.Editable;
+import android.text.InputType;
+import android.text.TextWatcher;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.content.*;
-import android.content.res.*;
-import android.provider.*;
-import android.database.*;
-import android.text.*;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 
 
-/** @class ScanMidiFiles
+/**
+ * @class ScanMidiFiles
  * The ScanMidiFiles class is used to scan for midi files
  * on a background thread.
  */
-class ScanMidiFiles extends AsyncTask<Integer, Integer, ArrayList<FileUri> > {
+class ScanMidiFiles extends AsyncTask<Integer, Integer, ArrayList<FileUri>> {
     private ArrayList<FileUri> songlist;
     private File rootdir;
     private AllSongsActivity activity;
@@ -50,8 +65,8 @@ class ScanMidiFiles extends AsyncTask<Integer, Integer, ArrayList<FileUri> > {
             rootdir = Environment.getExternalStorageDirectory();
             Toast message = Toast.makeText(activity, "Scanning " + rootdir.getAbsolutePath() + " for MIDI files", Toast.LENGTH_SHORT);
             message.show();
+        } catch (Exception e) {
         }
-        catch (Exception e) {}
     }
 
     @Override
@@ -61,8 +76,7 @@ class ScanMidiFiles extends AsyncTask<Integer, Integer, ArrayList<FileUri> > {
         }
         try {
             loadMidiFilesFromDirectory(rootdir, 1);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
         }
         return songlist;
     }
@@ -84,7 +98,7 @@ class ScanMidiFiles extends AsyncTask<Integer, Integer, ArrayList<FileUri> > {
     protected void onCancelled() {
         this.activity = null;
     }
-    
+
     /* Given a directory, add MIDI files (ending in .mid) to the songlist.
      * If the directory contains subdirectories, call this method recursively.
      */
@@ -98,7 +112,7 @@ class ScanMidiFiles extends AsyncTask<Integer, Integer, ArrayList<FileUri> > {
         File[] files = dir.listFiles();
         if (files == null) {
             return;
-        }        
+        }
         for (File file : files) {
             if (file == null) {
                 continue;
@@ -107,7 +121,7 @@ class ScanMidiFiles extends AsyncTask<Integer, Integer, ArrayList<FileUri> > {
                 return;
             }
             if (file.getName().endsWith(".mid") || file.getName().endsWith(".MID") ||
-                file.getName().endsWith(".midi")) {
+                    file.getName().endsWith(".midi")) {
                 Uri uri = Uri.parse("file://" + file.getAbsolutePath());
                 String displayName = uri.getLastPathSegment();
                 FileUri song = new FileUri(uri, displayName);
@@ -120,36 +134,42 @@ class ScanMidiFiles extends AsyncTask<Integer, Integer, ArrayList<FileUri> > {
             }
             try {
                 if (file.isDirectory()) {
-                    loadMidiFilesFromDirectory(file, depth+1);
+                    loadMidiFilesFromDirectory(file, depth + 1);
                 }
+            } catch (Exception e) {
             }
-            catch (Exception e) {}
         }
     }
 }
 
 
-
-
-/** @class AllSongsActivity
+/**
+ * @class AllSongsActivity
  * The AllSongsActivity class is used to display a list of
  * songs to choose from.  The list is created from the songs
- * shipped with MidiSheetMusic (in the assets directory), and 
- * also by searching for midi files in the internal/external 
+ * shipped with MidiSheetMusic (in the assets directory), and
+ * also by searching for midi files in the internal/external
  * device storage.
- *
+ * <p/>
  * When a song is chosen, this calls the SheetMusicAcitivty, passing
  * the raw midi byte[] data as a parameter in the Intent.
- */ 
+ */
 public class AllSongsActivity extends ListActivity implements TextWatcher {
 
-    /** The complete list of midi files */
+    static AllSongsActivity globalActivity;
+    /**
+     * The complete list of midi files
+     */
     ArrayList<FileUri> songlist;
 
-    /** Textbox to filter the songs by name */
+    /**
+     * Textbox to filter the songs by name
+     */
     EditText filterText;
 
-    /** Task to scan for midi files */
+    /**
+     * Task to scan for midi files
+     */
     ScanMidiFiles scanner;
 
     IconArrayAdapter<FileUri> adapter;
@@ -161,13 +181,14 @@ public class AllSongsActivity extends ListActivity implements TextWatcher {
     public Object onRetainNonConfigurationInstance() {
         return songlist;
     }
-    
-    
+
+
     @Override
     public void onCreate(Bundle state) {
+        globalActivity = this;
         super.onCreate(state);
         setContentView(R.layout.choose_song);
-        setTitle("MidiSheetMusic: Choose Song");
+        setTitle("Receptor: Choose Song");
         
         /* If we're restarting from an orientation change,
          * load the saved song list.
@@ -219,8 +240,9 @@ public class AllSongsActivity extends ListActivity implements TextWatcher {
     }
 
 
-    /** Scan the SD card for midi songs.  Since this is a lengthy
-     *  operation, perform the scan in a background thread.
+    /**
+     * Scan the SD card for midi songs.  Since this is a lengthy
+     * operation, perform the scan in a background thread.
      */
     public void scanForSongs() {
         if (scanner != null) {
@@ -256,35 +278,36 @@ public class AllSongsActivity extends ListActivity implements TextWatcher {
         scanner = null;
     }
 
-    /** Load all the sample midi songs from the assets directory into songlist.
-     *  Look for files ending with ".mid"
+    /**
+     * Load all the sample midi songs from the assets directory into songlist.
+     * Look for files ending with ".mid"
      */
     void loadAssetMidiFiles() {
         try {
             AssetManager assets = this.getResources().getAssets();
             String[] files = assets.list("");
-            for (String path: files) {
+            for (String path : files) {
                 if (path.endsWith(".mid")) {
                     Uri uri = Uri.parse("file:///android_asset/" + path);
                     FileUri file = new FileUri(uri, path);
                     songlist.add(file);
                 }
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
         }
     }
 
-    
-    /** Look for midi files (with mime-type audio/midi) in the 
+
+    /**
+     * Look for midi files (with mime-type audio/midi) in the
      * internal/external storage. Add them to the songlist.
      */
     private void loadMidiFilesFromProvider(Uri content_uri) {
         ContentResolver resolver = getContentResolver();
-        String columns[] = { 
-            MediaStore.Audio.Media._ID,
-            MediaStore.Audio.Media.TITLE, 
-            MediaStore.Audio.Media.MIME_TYPE 
+        String columns[] = {
+                MediaStore.Audio.Media._ID,
+                MediaStore.Audio.Media.TITLE,
+                MediaStore.Audio.Media.MIME_TYPE
         };
         String selection = MediaStore.Audio.Media.MIME_TYPE + " LIKE '%mid%'";
         Cursor cursor = resolver.query(content_uri, columns, selection, null, null);
@@ -295,7 +318,7 @@ public class AllSongsActivity extends ListActivity implements TextWatcher {
             cursor.close();
             return;
         }
-        
+
         do {
             int idColumn = cursor.getColumnIndex(MediaStore.Audio.Media._ID);
             int titleColumn = cursor.getColumnIndex(MediaStore.Audio.Media.TITLE);
@@ -314,10 +337,11 @@ public class AllSongsActivity extends ListActivity implements TextWatcher {
         cursor.close();
     }
 
-    /** When a song is clicked on, start a SheetMusicActivity.
-     *  Read the raw byte[] data of the midi file.
-     *  Pass the raw byte[] data as a parameter in the Intent.
-     *  Pass the midi file Title as a parameter in the Intent.
+    /**
+     * When a song is clicked on, start a SheetMusicActivity.
+     * Read the raw byte[] data of the midi file.
+     * Pass the raw byte[] data as a parameter in the Intent.
+     * Pass the midi file Title as a parameter in the Intent.
      */
     @Override
     protected void onListItemClick(ListView parent, View view, int position, long id) {
@@ -327,12 +351,13 @@ public class AllSongsActivity extends ListActivity implements TextWatcher {
             scanner = null;
         }
         FileUri file = (FileUri) this.getListAdapter().getItem(position);
-        ChooseSongActivity.openFile(file);
+        AllSongsActivity.openFile(file);
     }
 
 
-    /** As text is entered in the filter box, filter the list of
-     *  midi songs to display.
+    /**
+     * As text is entered in the filter box, filter the list of
+     * midi songs to display.
      */
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -343,16 +368,49 @@ public class AllSongsActivity extends ListActivity implements TextWatcher {
     public void afterTextChanged(Editable s) {
     }
 
-   
+
     @Override
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
     }
 
-    /** Start the FileBrowser activity, which is used to select a midi file */
+    /**
+     * Start the FileBrowser activity, which is used to select a midi file
+     */
     void browseForSongs() {
         Intent intent = new Intent(this, FileBrowserActivity.class);
         startActivity(intent);
     }
 
-}
+    public static void openFile(FileUri file) {
+        globalActivity.doOpenFile(file);
+    }
 
+    public void doOpenFile(FileUri file) {
+        byte[] data = file.getData(this);
+        if (data == null || data.length <= 6 || !MidiFile.hasMidiHeader(data)) {
+            ChooseSongActivity.showErrorDialog("Error: Unable to open song: " + file.toString(), this);
+            return;
+        }
+        //updateRecentFile(file);
+        Intent intent = new Intent(Intent.ACTION_VIEW, file.getUri(), this, SheetMusicActivity.class);
+        intent.putExtra(SheetMusicActivity.MidiTitleID, file.toString());
+        startActivity(intent);
+    }
+
+
+    /**
+     * Show an error dialog with the given message
+     */
+    public static void showErrorDialog(String message, Activity activity) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setMessage(message);
+        builder.setCancelable(false);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+}

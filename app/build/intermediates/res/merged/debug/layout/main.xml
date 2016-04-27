@@ -4,18 +4,18 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center"
-    android:background="@drawable/main_background"
+    android:background="@drawable/map"
     >
 
     <Button
         android:id="@+id/choose_song"
-        android:text="@string/choose_song"
+        android:text="@string/let_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="24sp"
+        android:textSize="45sp"
         android:textStyle="bold"
-        android:textColor="#1E1C1B"
-    />
+        android:textColor="#ffffff"
+        />
     
 </LinearLayout>

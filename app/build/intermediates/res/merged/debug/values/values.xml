@@ -438,7 +438,6 @@
     <string name="cast_notification_connected_message">Connected to <ns1:g id="name">%1$s</ns1:g></string>
     <string name="cast_notification_connecting_message">Connecting to <ns1:g id="name">%1$s</ns1:g></string>
     <string name="cast_notification_disconnect">Disconnect</string>
-    <string name="choose_song">Choose Song</string>
     <string name="combine_interval">Combine Interval</string>
     <string name="combine_interval_summary">Notes within the given interval (in milliseconds) are combined into a single chord</string>
     <string name="combine_to_two_staffs">Combine To Two Staffs</string>
@@ -479,6 +478,7 @@
     <string name="help_str">Help</string>
     <string name="key_signature">Key Signature</string>
     <string name="left_hand_color">Left Hand Color</string>
+    <string name="let_start">Start!</string>
     <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
     <string name="mr_media_route_button_content_description">Cast</string>
     <string name="mr_media_route_chooser_searching">Searching for devices\u2026</string>

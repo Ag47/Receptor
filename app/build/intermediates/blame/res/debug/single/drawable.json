@@ -204,6 +204,10 @@
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable/mr_ic_media_route_connecting_mono_dark.xml"
     },
     {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/drawable/map.png",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/drawable/map.png"
+    },
+    {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/drawable/main_background.png",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/drawable/main_background.png"
     },

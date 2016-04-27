@@ -10,70 +10,131 @@
  *  GNU General Public License for more details.
  */
 
-
 package com.receptor;
 
-import android.app.*;
-import android.content.*;
-import android.os.*;
-import android.preference.*;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
+import android.preference.Preference;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceCategory;
+import android.preference.PreferenceScreen;
 
-
-/** @class SettingsActivity
- *  This activity is created by the "Settings" menu option.
- *  The user can change settings such as:
- *  - Which tracks to display
- *  - Which tracks to mute
- *  - Which instruments to use during playback
- *  - Whether to scroll horizontally or vertically
- *  - Whether to display the piano or not
- *  - Whether to display note letters or not
- *  - Transpose the notes to another key
- *  - Change the key signature or time signature displayed
- *  - Change how notes are combined into chords (the time interval)
- *  - Change the colors for shading the left/right hands.
- *  - Whether to display measure numbers
- *  - Play selected measures in a loop
- * 
+/**
+ * @class SettingsActivity
+ * This activity is created by the "Settings" menu option.
+ * The user can change settings such as:
+ * - Which tracks to display
+ * - Which tracks to mute
+ * - Which instruments to use during playback
+ * - Whether to scroll horizontally or vertically
+ * - Whether to display the piano or not
+ * - Whether to display note letters or not
+ * - Transpose the notes to another key
+ * - Change the key signature or time signature displayed
+ * - Change how notes are combined into chords (the time interval)
+ * - Change the colors for shading the left/right hands.
+ * - Whether to display measure numbers
+ * - Play selected measures in a loop
+ * <p/>
  * When created, pass an Intent parameter containing MidiOptions.
  * When destroyed, this activity passes the result MidiOptions to the Intent.
  */
-public class SettingsActivity extends PreferenceActivity 
-    implements Preference.OnPreferenceChangeListener, Preference.OnPreferenceClickListener {
+public class SettingsActivity extends PreferenceActivity
+        implements Preference.OnPreferenceChangeListener, Preference.OnPreferenceClickListener {
 
     public static final String settingsID = "settings";
     public static final String defaultSettingsID = "defaultSettings";
 
-    private MidiOptions defaultOptions;  /** The initial option values */
-    private MidiOptions options;         /** The option values */
+    private MidiOptions defaultOptions;
+    /**
+     * The initial option values
+     */
+    private MidiOptions options;
+    /**
+     * The option values
+     */
 
-    private Preference restoreDefaults;           /** Restore default settings */
-    private CheckBoxPreference[] selectTracks;    /** Which tracks to display */
-    private CheckBoxPreference[] muteTracks;      /** Which tracks to mute */
-    private ListPreference[] selectInstruments;   /** Instruments to use per track */
-    private Preference setAllToPiano;             /** Set all instruments to piano */
-    private CheckBoxPreference scrollVertically;  /** Scroll vertically/horizontally */
-    private CheckBoxPreference showPiano;         /** Show the piano */
-    private CheckBoxPreference showMeasures;      /** Show the measure numbers */
-    private CheckBoxPreference showLyrics;        /** Show the lyrics */
-    private CheckBoxPreference twoStaffs;         /** Combine tracks into two staffs */
-    private ListPreference showNoteLetters;       /** Show the note letters */
-    private ListPreference transpose;             /** Transpose notes */
-    private ListPreference key;                   /** Key Signature to use */
-    private ListPreference time;                  /** Time Signature to use */
-    private ListPreference combineInterval;       /** Interval (msec) to combine notes */
-    
-    private ColorPreference shade1Color;          /** Right-hand color */
+    private Preference restoreDefaults;
+    /**
+     * Restore default settings
+     */
+    private CheckBoxPreference[] selectTracks;
+    /**
+     * Which tracks to display
+     */
+    private CheckBoxPreference[] muteTracks;
+    /**
+     * Which tracks to mute
+     */
+    private ListPreference[] selectInstruments;
+    /**
+     * Instruments to use per track
+     */
+    private Preference setAllToPiano;
+    /**
+     * Set all instruments to piano
+     */
+    private CheckBoxPreference scrollVertically;
+    /**
+     * Scroll vertically/horizontally
+     */
+    private CheckBoxPreference showPiano;
+    /**
+     * Show the piano
+     */
+    private CheckBoxPreference showMeasures;
+    /**
+     * Show the measure numbers
+     */
+    private CheckBoxPreference showLyrics;
+    /**
+     * Show the lyrics
+     */
+    private CheckBoxPreference twoStaffs;
+    /**
+     * Combine tracks into two staffs
+     */
+    private ListPreference showNoteLetters;
+    /**
+     * Show the note letters
+     */
+    private ListPreference transpose;
+    /**
+     * Transpose notes
+     */
+    private ListPreference key;
+    /**
+     * Key Signature to use
+     */
+    private ListPreference time;
+    /**
+     * Time Signature to use
+     */
+    private ListPreference combineInterval;
+    /**
+     * Interval (msec) to combine notes
+     */
+
+    private ColorPreference shade1Color;
+    /**
+     * Right-hand color
+     */
     private ColorPreference shade2Color;          /** Left-hand color */
 
-    /** Play the measures from start to end in a loop */
+    /**
+     * Play the measures from start to end in a loop
+     */
     private CheckBoxPreference playMeasuresInLoop;
     private ListPreference loopStart;
     private ListPreference loopEnd;
 
 
-    /** Create the Settings activity. Retrieve the initial option values
-     *  (MidiOptions) from the Intent.
+    /**
+     * Create the Settings activity. Retrieve the initial option values
+     * (MidiOptions) from the Intent.
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -81,13 +142,15 @@ public class SettingsActivity extends PreferenceActivity
         // getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(40, 40, 40)));
         // getListView().setBackgroundColor(Color.TRANSPARENT);
         // getListView().setCacheColorHint(Color.TRANSPARENT);
-        setTitle("MidiSheetMusic: Settings");
+        setTitle("Receptor: Settings");
         options = (MidiOptions) this.getIntent().getSerializableExtra(settingsID);
         defaultOptions = (MidiOptions) this.getIntent().getSerializableExtra(defaultSettingsID);
         createView();
     }
 
-    /** Create all the preference widgets in the view */
+    /**
+     * Create all the preference widgets in the view
+     */
     private void createView() {
         PreferenceScreen root = getPreferenceManager().createPreferenceScreen(this);
         createRestoreDefaultPrefs(root);
@@ -115,25 +178,27 @@ public class SettingsActivity extends PreferenceActivity
         setPreferenceScreen(root);
     }
 
-    /** For each list dialog, we display the value selected in the "summary" text.
-     *  When a new value is selected from the list dialog, update the summary
-     *  to the selected entry.
+    /**
+     * For each list dialog, we display the value selected in the "summary" text.
+     * When a new value is selected from the list dialog, update the summary
+     * to the selected entry.
      */
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ListPreference list = (ListPreference) preference;
-        int index = list.findIndexOfValue((String)newValue);
+        int index = list.findIndexOfValue((String) newValue);
         CharSequence entry = list.getEntries()[index];
         preference.setSummary(entry);
         return true;
     }
 
-    /** When the 'restore defaults' preference is clicked, restore the default settings */
+    /**
+     * When the 'restore defaults' preference is clicked, restore the default settings
+     */
     public boolean onPreferenceClick(Preference preference) {
         if (preference == restoreDefaults) {
             options = defaultOptions.copy();
-            createView(); 
-        }
-        else if (preference == setAllToPiano) {
+            createView();
+        } else if (preference == setAllToPiano) {
             for (int i = 0; i < options.instruments.length; i++) {
                 options.instruments[i] = 0;
             }
@@ -143,7 +208,9 @@ public class SettingsActivity extends PreferenceActivity
     }
 
 
-    /** Create the "Select Tracks to Display" checkboxes. */
+    /**
+     * Create the "Select Tracks to Display" checkboxes.
+     */
     private void createTrackPrefs(PreferenceScreen root) {
         PreferenceCategory selectTracksTitle = new PreferenceCategory(this);
         selectTracksTitle.setTitle(R.string.select_tracks_to_display);
@@ -157,7 +224,9 @@ public class SettingsActivity extends PreferenceActivity
         }
     }
 
-    /** Create the "Select Tracks to Mute" checkboxes. */
+    /**
+     * Create the "Select Tracks to Mute" checkboxes.
+     */
     private void createMutePrefs(PreferenceScreen root) {
         PreferenceCategory muteTracksTitle = new PreferenceCategory(this);
         muteTracksTitle.setTitle(R.string.select_tracks_to_mute);
@@ -172,8 +241,9 @@ public class SettingsActivity extends PreferenceActivity
     }
 
 
-    /** Create the "Select Instruments For Each Track " lists.
-     *  The list of possible instruments is in MidiFile.java.
+    /**
+     * Create the "Select Instruments For Each Track " lists.
+     * The list of possible instruments is in MidiFile.java.
      */
     private void createInstrumentPrefs(PreferenceScreen root) {
         PreferenceCategory selectInstrTitle = new PreferenceCategory(this);
@@ -187,7 +257,7 @@ public class SettingsActivity extends PreferenceActivity
             selectInstruments[i].setEntryValues(MidiFile.Instruments);
             selectInstruments[i].setTitle("Track " + i);
             selectInstruments[i].setValueIndex(options.instruments[i]);
-            selectInstruments[i].setSummary( selectInstruments[i].getEntry() );
+            selectInstruments[i].setSummary(selectInstruments[i].getEntry());
             root.addPreference(selectInstruments[i]);
         }
         setAllToPiano = new Preference(this);
@@ -196,7 +266,9 @@ public class SettingsActivity extends PreferenceActivity
         root.addPreference(setAllToPiano);
     }
 
-    /** Create the "Scroll Vertically" preference */
+    /**
+     * Create the "Scroll Vertically" preference
+     */
     private void createScrollPrefs(PreferenceScreen root) {
         scrollVertically = new CheckBoxPreference(this);
         scrollVertically.setTitle(R.string.scroll_vertically);
@@ -204,7 +276,9 @@ public class SettingsActivity extends PreferenceActivity
         root.addPreference(scrollVertically);
     }
 
-    /** Create the "Show Piano" preference */
+    /**
+     * Create the "Show Piano" preference
+     */
     private void createShowPianoPrefs(PreferenceScreen root) {
         showPiano = new CheckBoxPreference(this);
         showPiano.setTitle(R.string.show_piano);
@@ -212,7 +286,9 @@ public class SettingsActivity extends PreferenceActivity
         root.addPreference(showPiano);
     }
 
-    /** Create the "Show Lyrics" preference */
+    /**
+     * Create the "Show Lyrics" preference
+     */
     private void createShowLyricsPrefs(PreferenceScreen root) {
         showLyrics = new CheckBoxPreference(this);
         showLyrics.setTitle(R.string.show_lyrics);
@@ -220,7 +296,9 @@ public class SettingsActivity extends PreferenceActivity
         root.addPreference(showLyrics);
     }
 
-    /** Create the "Show Note Letters" preference */
+    /**
+     * Create the "Show Note Letters" preference
+     */
     private void createShowLetterPrefs(PreferenceScreen root) {
         showNoteLetters = new ListPreference(this);
         showNoteLetters.setOnPreferenceChangeListener(this);
@@ -233,14 +311,15 @@ public class SettingsActivity extends PreferenceActivity
     }
 
 
-    /** Create the "Combine to Two Staffs" preference. */
+    /**
+     * Create the "Combine to Two Staffs" preference.
+     */
     private void createTwoStaffsPrefs(PreferenceScreen root) {
         twoStaffs = new CheckBoxPreference(this);
         if (options.tracks.length == 1) {
             twoStaffs.setTitle(R.string.split_to_two_staffs);
             twoStaffs.setSummary(R.string.split_to_two_staffs_summary);
-        }
-        else {
+        } else {
             twoStaffs.setTitle(R.string.combine_to_two_staffs);
             twoStaffs.setSummary(R.string.combine_to_two_staffs_summary);
         }
@@ -248,8 +327,9 @@ public class SettingsActivity extends PreferenceActivity
         root.addPreference(twoStaffs);
     }
 
-    /** Create the "Transpose Notes" preference.
-     *  The values range from 12, 11, 10, .. -10, -11, -12
+    /**
+     * Create the "Transpose Notes" preference.
+     * The values range from 12, 11, 10, .. -10, -11, -12
      */
     private void createTransposePrefs(PreferenceScreen root) {
         int transposeIndex = 12 - options.transpose;
@@ -263,7 +343,9 @@ public class SettingsActivity extends PreferenceActivity
         root.addPreference(transpose);
     }
 
-    /** Create the "Key Signature" preference */
+    /**
+     * Create the "Key Signature" preference
+     */
     private void createKeySignaturePrefs(PreferenceScreen root) {
         key = new ListPreference(this);
         key.setOnPreferenceChangeListener(this);
@@ -275,9 +357,11 @@ public class SettingsActivity extends PreferenceActivity
         root.addPreference(key);
     }
 
-    /** Create the "Time Signature" preference */
+    /**
+     * Create the "Time Signature" preference
+     */
     private void createTimeSignaturePrefs(PreferenceScreen root) {
-        String[] values = { "Default", "3/4", "4/4" };
+        String[] values = {"Default", "3/4", "4/4"};
         int selected = 0;
         if (options.time != null && options.time.getNumerator() == 3)
             selected = 1;
@@ -295,19 +379,20 @@ public class SettingsActivity extends PreferenceActivity
     }
 
 
-    /** Create the "Combine Notes Within Interval"  preference.
-     *  Notes within N milliseconds are combined into a single chord,
-     *  even though their start times may be slightly different.
+    /**
+     * Create the "Combine Notes Within Interval"  preference.
+     * Notes within N milliseconds are combined into a single chord,
+     * even though their start times may be slightly different.
      */
     private void createCombineIntervalPrefs(PreferenceScreen root) {
-        int selected = options.combineInterval/20  - 1;
+        int selected = options.combineInterval / 20 - 1;
         combineInterval = new ListPreference(this);
         combineInterval.setOnPreferenceChangeListener(this);
         combineInterval.setTitle(R.string.combine_interval);
         combineInterval.setEntries(R.array.combine_interval_entries);
         combineInterval.setEntryValues(R.array.combine_interval_values);
         combineInterval.setValueIndex(selected);
-        combineInterval.setSummary(combineInterval.getEntry() );
+        combineInterval.setSummary(combineInterval.getEntry());
         root.addPreference(combineInterval);
     }
 
@@ -326,15 +411,16 @@ public class SettingsActivity extends PreferenceActivity
     }
 
 
-    /** Create the "Play Measures in a Loop" preference.
-     *
-     *  Note that we display the measure numbers starting at 1, 
-     *  but the actual playMeasuresInLoopStart field starts at 0.
+    /**
+     * Create the "Play Measures in a Loop" preference.
+     * <p/>
+     * Note that we display the measure numbers starting at 1,
+     * but the actual playMeasuresInLoopStart field starts at 0.
      */
     private void createPlayMeasuresInLoopPrefs(PreferenceScreen root) {
         String[] values = new String[options.lastMeasure + 1];
         for (int measure = 0; measure < values.length; measure++) {
-            values[measure] = "" + (measure+1);
+            values[measure] = "" + (measure + 1);
         }
 
         PreferenceCategory playLoopTitle = new PreferenceCategory(this);
@@ -357,7 +443,7 @@ public class SettingsActivity extends PreferenceActivity
         loopStart.setEntries(values);
         loopStart.setEntryValues(values);
         loopStart.setValueIndex(options.playMeasuresInLoopStart);
-        loopStart.setSummary(loopStart.getEntry() );
+        loopStart.setSummary(loopStart.getEntry());
         root.addPreference(loopStart);
 
         loopEnd = new ListPreference(this);
@@ -366,7 +452,7 @@ public class SettingsActivity extends PreferenceActivity
         loopEnd.setEntries(values);
         loopEnd.setEntryValues(values);
         loopEnd.setValueIndex(options.playMeasuresInLoopEnd);
-        loopEnd.setSummary(loopEnd.getEntry() );
+        loopEnd.setSummary(loopEnd.getEntry());
         root.addPreference(loopEnd);
     }
 
@@ -376,9 +462,11 @@ public class SettingsActivity extends PreferenceActivity
         restoreDefaults.setTitle(R.string.restore_defaults);
         restoreDefaults.setOnPreferenceClickListener(this);
         root.addPreference(restoreDefaults);
-    } 
+    }
 
-    /** Update the MidiOptions based on the preferences selected. */
+    /**
+     * Update the MidiOptions based on the preferences selected.
+     */
     private void updateOptions() {
         for (int i = 0; i < options.tracks.length; i++) {
             options.tracks[i] = selectTracks[i].isChecked();
@@ -403,14 +491,12 @@ public class SettingsActivity extends PreferenceActivity
         options.key = Integer.parseInt(key.getValue());
         if (time.getValue().equals("Default")) {
             options.time = null;
-        }
-        else if (time.getValue().equals("3/4")) {
+        } else if (time.getValue().equals("3/4")) {
             options.time = new TimeSignature(3, 4, options.defaultTime.getQuarter(),
-                                             options.defaultTime.getTempo());
-        }
-        else if (time.getValue().equals("4/4")) {
+                    options.defaultTime.getTempo());
+        } else if (time.getValue().equals("4/4")) {
             options.time = new TimeSignature(4, 4, options.defaultTime.getQuarter(),
-                                             options.defaultTime.getTempo());
+                    options.defaultTime.getTempo());
         }
         options.combineInterval = Integer.parseInt(combineInterval.getValue());
         options.shade1Color = shade1Color.getColor();
@@ -421,8 +507,9 @@ public class SettingsActivity extends PreferenceActivity
         options.playMeasuresInLoopEnd = Integer.parseInt(loopEnd.getValue()) - 1;
     }
 
-    /** When the back button is pressed, update the MidiOptions.
-     *  Return the updated options as the 'result' of this Activity.
+    /**
+     * When the back button is pressed, update the MidiOptions.
+     * Return the updated options as the 'result' of this Activity.
      */
     @Override
     public void onBackPressed() {
@@ -432,7 +519,5 @@ public class SettingsActivity extends PreferenceActivity
         setResult(Activity.RESULT_OK, intent);
         super.onBackPressed();
     }
-        
+
 }
-
-
