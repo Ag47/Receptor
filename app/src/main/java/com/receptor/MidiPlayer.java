@@ -214,6 +214,8 @@ public class MidiPlayer extends LinearLayout {
 
     public static AudioManager audioManager;
 
+    public int major;
+
     /**
      * Load the play/pause/stop button images
      */
@@ -539,6 +541,7 @@ public class MidiPlayer extends LinearLayout {
         Log.wtf("arousal: ", Integer.toString(arousal));
         Log.wtf("valence: ", Integer.toString(valence));
         Log.wtf("Key ", "" + options.key);
+        Log.wtf("Major", "" + major);
 
 
 
@@ -546,7 +549,15 @@ public class MidiPlayer extends LinearLayout {
         // double inverse_tempo_scaled = inverse_tempo * 100.0 / 100.0;
         options.tempo = (int) (1.0 / inverse_tempo_scaled);
         options.velocity = arousal; //Velocity 0 -127
-        options.majorMinor = valence; //Major = 0, Minor = 1
+
+
+        Log.i("Major Val", ""+ major + " " + valence);
+        if(valence != major)
+            options.majorMinor = valence; //Major = 0, Minor = 1
+
+        else{
+            options.majorMinor = -1; //Major = 0, Minor = 1
+        }
 
 
         pulsesPerMsec = midifile.getTime().getQuarter() * (1000.0 / options.tempo);
@@ -560,6 +571,12 @@ public class MidiPlayer extends LinearLayout {
             Toast toast = Toast.makeText(activity, "Error: Unable to create MIDI file for playing.", Toast.LENGTH_LONG);
             toast.show();
         }
+    }
+
+    private void setKey(int key, int major1){
+        options.key = key;
+        major = major1;
+        valence = major1;
     }
 
     private void checkFile(String name) {
@@ -687,12 +704,16 @@ public class MidiPlayer extends LinearLayout {
         // Hide the midi player, wait a little for the view
         // to refresh, and then start playing
 //        this.setVisibility(View.GONE);
+        setKey(0, 0);
         timer.removeCallbacks(TimerCallback);
         timer.postDelayed(DoPlay, 1000);
     }
 
     public void update(int x, int y) {
         Log.i("myPlayer", "Update");
+
+
+
         if (x == 0) {
             valence = 1;
         } else if (x == 1) {
@@ -702,6 +723,7 @@ public class MidiPlayer extends LinearLayout {
         arousal = y;
         long msec = SystemClock.uptimeMillis() - startTime;
         StopSound();
+
 
         prevPulseTime = currentPulseTime;
         currentPulseTime = startPulseTime + msec * pulsesPerMsec;
