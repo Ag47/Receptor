@@ -33,7 +33,6 @@
         <activity android:name="com.receptor.ChooseSongActivity"></activity>
         <activity android:name="com.receptor.FileBrowserActivity"></activity>
         <activity android:name="com.receptor.AllSongsActivity"></activity>
-        <activity android:name="com.receptor.RecentSongsActivity"></activity>
         <activity android:name="com.receptor.SettingsActivity"></activity>
         <activity android:name="com.receptor.HelpActivity"></activity>
         <activity
