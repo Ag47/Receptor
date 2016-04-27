@@ -19,6 +19,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -211,6 +212,8 @@ public class MidiPlayer extends LinearLayout {
      **/
     private int arousal = -1;        /** 20 - 127 **/
 
+    public static AudioManager audioManager;
+
     /**
      * Load the play/pause/stop button images
      */
@@ -253,6 +256,7 @@ public class MidiPlayer extends LinearLayout {
         resizeButtons(newsize.x, newsize.y);
         player = new MediaPlayer();
         setBackgroundColor(Color.BLACK);
+        audioManager = (AudioManager) activity.getSystemService(Context.AUDIO_SERVICE);
     }
 
     /**
@@ -592,6 +596,7 @@ public class MidiPlayer extends LinearLayout {
      * Play the sound for the given MIDI file
      */
     private void PlaySound(String filename) {
+        Log.i("myPlayer", "Play");
         if (player == null)
             return;
         try {
@@ -601,6 +606,7 @@ public class MidiPlayer extends LinearLayout {
             input.close();
             player.prepare();
             player.start();
+            fadein();
         } catch (IOException e) {
             Toast toast = Toast.makeText(activity, "Error: Unable to play MIDI sound", Toast.LENGTH_LONG);
             toast.show();
@@ -611,11 +617,55 @@ public class MidiPlayer extends LinearLayout {
      * Stop playing the MIDI music
      */
     private void StopSound() {
+        Log.i("myPlayer", "Stop");
         if (player == null)
             return;
+
+        fadeout();
         player.stop();
         player.reset();
     }
+
+
+    private void fadeout(){
+        int targetVol = 4;
+        int STEP_DOWN=1;
+        int currentVol = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+        int orgVol=currentVol;
+        Log.i("myPlayer", "fade out" + orgVol);
+            // fade music gently
+        while(currentVol > targetVol) {
+            try {
+                Thread.sleep(100);
+            }catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVol - STEP_DOWN,0);
+            currentVol = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+        }
+        player.stop();
+
+    }
+
+    private void fadein(){
+        int targetVol = 9;
+        int STEP_UP=1;
+        int currentVol = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+        int orgVol=currentVol;
+        // fade music gently
+        while(currentVol < targetVol) {
+            try {
+                Thread.sleep(100);
+            }catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVol + STEP_UP,0);
+            currentVol = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+        }
+
+    }
+
+
 
 
     /**
@@ -639,6 +689,7 @@ public class MidiPlayer extends LinearLayout {
     }
 
     public void update(int x, int y) {
+        Log.i("myPlayer", "Update");
         if (x == 0) {
             valence = 1;
         } else if (x == 1) {
