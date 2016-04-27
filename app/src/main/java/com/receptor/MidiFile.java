@@ -13,6 +13,8 @@
 
 package com.receptor;
 
+import android.util.Log;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -204,6 +206,10 @@ public class MidiFile {
     private int quarternote;          /** The number of pulses per quarter note */
     private int totalpulses;          /** The total length of the song, in pulses */
     private boolean trackPerChannel;  /** True if we've split each channel into a track */
+    private int highNote;
+    private int lowNote;
+    private int key;
+    private boolean major;
 
     /* The list of Midi Events */
     public static final byte EventNoteOff         = (byte)0x80;
@@ -487,6 +493,7 @@ public class MidiFile {
             }
         }
 
+        getDataThatWeNeedForOurApp(tracks);
         /* If we only have one track with multiple channels, then treat
          * each channel as a separate track.
          */
@@ -989,6 +996,8 @@ public class MidiFile {
         WriteEvents(destfile, newevents, trackmode, quarternote);
     }
 
+
+
     /** Apply the following sound options to the midi events:
      * - The tempo (the microseconds per pulse)
      * - The instruments per track
@@ -1050,21 +1059,15 @@ public class MidiFile {
                 int num = mevent.Notenumber + options.transpose;
                 int note = NoteScale.FromNumber(mevent.Notenumber);
 
-                if(options.majorMinor == 1) {
-                    //C Major to Minor
-                    if (note == 7 || note == 0) {
-                        num -= 4;
-                    } else {
-                        num -= 3;
-                    }
+                num =changeKey(options, note, num);
 
 
-                    if (num < 0)
-                        num = 0;
-                    if (num > 127)
-                        num = 127;
-                    mevent.Notenumber = (byte) num;
-                }
+                if (num < 0)
+                    num = 0;
+                if (num > 127)
+                    num = 127;
+                mevent.Notenumber = (byte) num;
+
                 if (!options.useDefaultInstruments) {
                     mevent.Instrument = (byte)instruments[tracknum];
                 }
@@ -1094,6 +1097,116 @@ public class MidiFile {
         return result;
     }
 
+
+    private int changeKey(MidiOptions options, int note, int num){
+        if(options.majorMinor == 1 && options.key == 0) {
+            //C Major to Minor
+            if (note == 7 || note == 0) {
+                num -= 4;
+            } else {
+                num -= 3;
+            }
+        } else if (options.majorMinor == 0 && options.key == 0) {
+            //C Minor to Major
+            if (note == 7 || note == 0) {
+                num += 4;
+            } else {
+                num += 3;
+            }
+
+
+        } else if(options.majorMinor == 1 && options.key == 1) {
+            //D Major to Minor
+            if (note == 9 || note == 2) {
+                num -= 4;
+            } else {
+                num -= 3;
+            }
+        } else if (options.majorMinor == 0 && options.key == 1) {
+            //D Minor to Major
+            if (note == 9 || note == 2) {
+                num += 4;
+            } else {
+                num += 3;
+            }
+        }
+        else if(options.majorMinor == 1 && options.key == 2) {
+            //E Major to Minor
+            if (note == 11 || note == 4) {
+                num -= 4;
+            } else {
+                num -= 3;
+            }
+        } else if (options.majorMinor == 0 && options.key == 2) {
+            //E Minor to Major
+            if (note == 11 || note == 4) {
+                num += 4;
+            } else {
+                num += 3;
+            }
+        }
+        else if(options.majorMinor == 1 && options.key == 3) {
+            //F Major to Minor
+            if (note == 0 || note == 5) {
+                num -= 4;
+            } else {
+                num -= 3;
+            }
+        } else if (options.majorMinor == 0 && options.key == 3) {
+            //F Minor to Major
+            if (note == 0 || note == 5) {
+                num += 4;
+            } else {
+                num += 3;
+            }
+        }
+        else if(options.majorMinor == 1 && options.key == 4) {
+            //G Major to Minor
+            if (note == 2 || note == 7) {
+                num -= 4;
+            } else {
+                num -= 3;
+            }
+        } else if (options.majorMinor == 0 && options.key == 4) {
+            //G Minor to Major
+            if (note == 2 || note == 7) {
+                num += 4;
+            } else {
+                num += 3;
+            }
+        }
+        else if(options.majorMinor == 1 && options.key == 5) {
+            //A Major to Minor
+            if (note == 4 || note == 9) {
+                num -= 4;
+            } else {
+                num -= 3;
+            }
+        } else if (options.majorMinor == 0 && options.key == 5) {
+            //A Minor to Major
+            if (note == 4 || note == 9) {
+                num += 4;
+            } else {
+                num += 3;
+            }
+        }
+        else if(options.majorMinor == 1 && options.key == 6) {
+            //B Major to Minor
+            if (note == 6 || note == 11) {
+                num -= 4;
+            } else {
+                num -= 3;
+            }
+        } else if (options.majorMinor == 0 && options.key == 6) {
+            //B Minor to Major
+            if (note == 6 || note == 11) {
+                num += 4;
+            } else {
+                num += 3;
+            }
+        }
+        return num;
+    }
 
     /** Apply the following sound options to the midi events:
      * - The tempo (the microseconds per pulse)
@@ -1143,6 +1256,10 @@ public class MidiFile {
         for (int tracknum = 0; tracknum < newevents.size(); tracknum++) {
             for (MidiEvent mevent : newevents.get(tracknum)) {
                 int num = mevent.Notenumber + options.transpose;
+
+                int note = NoteScale.FromNumber(mevent.Notenumber);
+
+                num = changeKey(options, note, num);
                 if (num < 0)
                     num = 0;
                 if (num > 127)
@@ -1824,6 +1941,41 @@ public class MidiFile {
         System.out.print(f.toString());
         **/
     }
+
+    public void getDataThatWeNeedForOurApp(ArrayList<MidiTrack> tracks){
+        int highestNote =0;
+        int lowestNote = 0;
+        for (MidiTrack track : tracks) {
+            for (MidiNote note : track.getNotes()) {
+
+                if(note.getStartTime() == 0){
+                    highestNote = note.getNumber();
+                    lowNote = note.getNumber();
+                }
+
+                if(note.getNumber() > highestNote)
+                    highestNote = note.getNumber();
+
+                if(note.getNumber() < lowNote)
+                    lowNote = note.getNumber();
+            }
+        }
+
+        lowNote = lowestNote;
+        highNote = highestNote;
+
+        Log.i("Notes", "High: " + highestNote + " Low: " + lowNote);
+
+    }
+
+    public int getHighNote(){
+        return highNote;
+    }
+
+    public int getLowNote(){
+        return lowNote;
+    }
+
 
 }  /* End class MidiFile */
 
