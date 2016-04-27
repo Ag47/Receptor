@@ -45,10 +45,10 @@
         </activity>
         <activity android:name="com.receptor.ChooseSongActivity" />
         <activity android:name="com.receptor.FileBrowserActivity" />
-        <activity android:name="com.receptor.AllSongsActivity" />
-        <activity android:name="com.receptor.RecentSongsActivity" />
+        <activity
+            android:name="com.receptor.AllSongsActivity"
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name="com.receptor.SettingsActivity" />
-        <activity android:name="com.receptor.HelpActivity" />
         <activity
             android:name="com.receptor.SheetMusicActivity"
             android:configChanges="orientation"

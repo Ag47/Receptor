@@ -30,11 +30,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.receptor.ChooseSongActivity"></activity>
-        <activity android:name="com.receptor.FileBrowserActivity"></activity>
-        <activity android:name="com.receptor.AllSongsActivity"></activity>
-        <activity android:name="com.receptor.SettingsActivity"></activity>
-        <activity android:name="com.receptor.HelpActivity"></activity>
+        <activity android:name="com.receptor.ChooseSongActivity" />
+        <activity android:name="com.receptor.FileBrowserActivity" />
+        <activity
+            android:name="com.receptor.AllSongsActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name="com.receptor.SettingsActivity" />
         <activity
             android:name="com.receptor.SheetMusicActivity"
             android:configChanges="orientation"

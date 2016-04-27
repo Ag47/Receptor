@@ -138,7 +138,7 @@ public class SheetMusicActivity extends Activity {
             title = uri.getLastPathSegment();
         }
         FileUri file = new FileUri(uri, title);
-        this.setTitle("MidiSheetMusic: " + title);
+        this.setTitle("Receptor: " + title);
         byte[] data;
         try {
             data = file.getData(this);
@@ -253,11 +253,12 @@ public class SheetMusicActivity extends Activity {
                     } else {
                         requestCameraPermission();
                     }
-                } else{
+                } else {
                     panel_2D.setVisibility(View.VISIBLE);
                     mPreview.stop();
                     switch_camera.setImageDrawable(getResources().getDrawable(R.drawable.ic_face_white_48dp));
                     mCameraSource.release();
+                    mCameraSource = null;
                     emotion_mode = 1;
                     camera_view.setVisibility(View.GONE);
                 }
@@ -334,29 +335,12 @@ public class SheetMusicActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.choose_song:
-                chooseSong();
-                return true;
             case R.id.song_settings:
                 changeSettings();
-                return true;
-            case R.id.save_images:
-                showSaveImagesDialog();
-                return true;
-            case R.id.help:
-                showHelp();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    /**
-     * To choose a new song, simply finish this activity.
-     * The previous activity is always the ChooseSongActivity.
-     */
-    private void chooseSong() {
-        this.finish();
     }
 
     /**
@@ -372,90 +356,6 @@ public class SheetMusicActivity extends Activity {
         intent.putExtra(SettingsActivity.settingsID, options);
         intent.putExtra(SettingsActivity.defaultSettingsID, defaultOptions);
         startActivityForResult(intent, settingsRequestCode);
-    }
-
-
-    /* Show the "Save As Images" dialog */
-    private void showSaveImagesDialog() {
-        LayoutInflater inflator = LayoutInflater.from(this);
-        final View dialogView = inflator.inflate(R.layout.save_images_dialog, null);
-        final EditText filenameView = (EditText) dialogView.findViewById(R.id.save_images_filename);
-        filenameView.setText(midifile.getFileName().replace("_", " "));
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.save_images_str);
-        builder.setView(dialogView);
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface builder, int whichButton) {
-                saveAsImages(filenameView.getText().toString());
-            }
-        });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface builder, int whichButton) {
-            }
-        });
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
-
-
-    /* Save the current sheet music as PNG images. */
-    private void saveAsImages(String name) {
-        String filename = name;
-        try {
-            filename = URLEncoder.encode(name, "utf-8");
-        } catch (UnsupportedEncodingException e) {
-        }
-        if (!options.scrollVert) {
-            options.scrollVert = true;
-//            createSheetMusic(options);
-        }
-        try {
-            int numpages = sheet.GetTotalPages();
-            for (int page = 1; page <= numpages; page++) {
-                Bitmap image = Bitmap.createBitmap(SheetMusic.PageWidth + 40, SheetMusic.PageHeight + 40, Bitmap.Config.ARGB_8888);
-                Canvas imageCanvas = new Canvas(image);
-                sheet.DrawPage(imageCanvas, page);
-                File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES + "/MidiSheetMusic");
-                File file = new File(path, "" + filename + page + ".png");
-                path.mkdirs();
-                OutputStream stream = new FileOutputStream(file);
-                image.compress(Bitmap.CompressFormat.PNG, 0, stream);
-                image = null;
-                stream.close();
-
-                // Inform the media scanner about the file
-                MediaScannerConnection.scanFile(this, new String[]{file.toString()}, null, null);
-            }
-        } catch (IOException e) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("Error saving image to file " + Environment.DIRECTORY_PICTURES + "/MidiSheetMusic/" + filename + ".png");
-            builder.setCancelable(false);
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                }
-            });
-            AlertDialog alert = builder.create();
-            alert.show();
-        } catch (NullPointerException e) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("Ran out of memory while saving image to file " + Environment.DIRECTORY_PICTURES + "/MidiSheetMusic/" + filename + ".png");
-            builder.setCancelable(false);
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                }
-            });
-            AlertDialog alert = builder.create();
-            alert.show();
-        }
-    }
-
-
-    /**
-     * Show the HTML help screen.
-     */
-    private void showHelp() {
-        Intent intent = new Intent(this, HelpActivity.class);
-        startActivity(intent);
     }
 
     /**

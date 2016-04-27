@@ -196,29 +196,23 @@ ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/A
 	android:name
 		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:30:27-74
 activity#com.receptor.ChooseSongActivity
-ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:33:9-77
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:33:9-68
 	android:name
 		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:33:19-65
 activity#com.receptor.FileBrowserActivity
-ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:34:9-78
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:34:9-69
 	android:name
 		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:34:19-66
 activity#com.receptor.AllSongsActivity
-ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:35:9-75
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:35:9-37:57
+	android:windowSoftInputMode
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:37:13-54
 	android:name
-		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:35:19-63
-activity#com.receptor.RecentSongsActivity
-ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:36:9-78
-	android:name
-		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:36:19-66
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:36:13-57
 activity#com.receptor.SettingsActivity
-ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:37:9-75
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:38:9-66
 	android:name
-		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:37:19-63
-activity#com.receptor.HelpActivity
-ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:38:9-71
-	android:name
-		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:38:19-59
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:38:19-63
 activity#com.receptor.SheetMusicActivity
 ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:39:9-52:20
 	android:screenOrientation
