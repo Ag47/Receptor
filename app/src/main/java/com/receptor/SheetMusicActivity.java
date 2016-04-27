@@ -292,7 +292,7 @@ public class SheetMusicActivity extends Activity {
         actionA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                actionA.setTitle("Action A clicked");
+                //actionA.setTitle("Action A clicked");
                 play_button.setImageDrawable(getResources().getDrawable(R.drawable.ic_stop_white_48dp));
                 playing_state = 1;
                 player.update(1, 120);
@@ -304,7 +304,7 @@ public class SheetMusicActivity extends Activity {
         actionB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                actionB.setTitle("Action B clicked");
+                //actionB.setTitle("Action B clicked");
                 play_button.setImageDrawable(getResources().getDrawable(R.drawable.ic_stop_white_48dp));
                 playing_state = 1;
                 player.update(0, 80);
@@ -315,9 +315,12 @@ public class SheetMusicActivity extends Activity {
         actionC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                actionC.setTitle("Action C clicked");
+                //actionC.setTitle("Blues Style Toggle");
                 play_button.setImageDrawable(getResources().getDrawable(R.drawable.ic_stop_white_48dp));
                 playing_state = 1;
+                player.togleBlues();
+                player.update(1, 70);
+
             }
         });
 
@@ -325,7 +328,7 @@ public class SheetMusicActivity extends Activity {
         actionD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                actionD.setTitle("Action D clicked");
+                //actionD.setTitle("Action D clicked");
                 play_button.setImageDrawable(getResources().getDrawable(R.drawable.ic_stop_white_48dp));
                 playing_state = 1;
             }

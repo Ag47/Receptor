@@ -221,6 +221,8 @@ public class MidiPlayer extends LinearLayout {
 
     public int major;
 
+    private Boolean blues = false;
+
     /**
      * Load the play/pause/stop button images
      */
@@ -574,6 +576,14 @@ public class MidiPlayer extends LinearLayout {
             options.majorMinor = -1; //Major = 0, Minor = 1
         }
 
+        if(blues){
+            options.useDefaultInstruments = false;
+            options.instruments[0] = 65;
+            options.instruments[1] = 33;
+        }else {
+            options.useDefaultInstruments = true;
+        }
+
 
         pulsesPerMsec = midifile.getTime().getQuarter() * (1000.0 / options.tempo);
 
@@ -585,6 +595,14 @@ public class MidiPlayer extends LinearLayout {
         } catch (IOException e) {
             Toast toast = Toast.makeText(activity, "Error: Unable to create MIDI file for playing.", Toast.LENGTH_LONG);
             toast.show();
+        }
+    }
+
+    public void togleBlues(){
+        if(blues){
+            blues = false;
+        }else {
+            blues = true;
         }
     }
 
