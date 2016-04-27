@@ -65,6 +65,7 @@
                     android:scheme="file" />
             </intent-filter>
         </activity>
+        <activity android:name="com.receptor.CaptureUser" />
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"

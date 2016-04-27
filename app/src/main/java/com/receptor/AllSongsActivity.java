@@ -19,6 +19,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.net.Uri;
@@ -188,7 +189,10 @@ public class AllSongsActivity extends ListActivity implements TextWatcher {
         globalActivity = this;
         super.onCreate(state);
         setContentView(R.layout.choose_song);
-        setTitle("Receptor: Choose Song");
+        SharedPreferences user;
+        user = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        float happy = user.getFloat("happiness",-1);
+        setTitle("Receptor Happy Index: " + Float.toString(happy));
         
         /* If we're restarting from an orientation change,
          * load the saved song list.

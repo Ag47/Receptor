@@ -34,6 +34,7 @@ import java.io.File;
 public class MidiSheetMusicActivity extends Activity {
 
     SharedPreferences user;
+    SharedPreferences.Editor userEdit;
     public static float userPref;
 
     @Override
@@ -41,6 +42,9 @@ public class MidiSheetMusicActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         user = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        userEdit = user.edit();
+        userEdit.remove("happiness");
+        userEdit.commit();
         userPref = user.getFloat("happiness",-1);
 
         loadImages();

@@ -8,14 +8,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -29,7 +26,6 @@ import com.google.android.gms.vision.face.FaceDetector;
 import com.receptor.camera.CameraSourcePreview;
 import com.receptor.camera.GraphicOverlay;
 
-import java.io.File;
 import java.io.IOException;
 
 /**
@@ -88,11 +84,11 @@ public class CaptureUser extends Activity {
         user = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
         userPref = user.getFloat("happiness", -1);
         edit = user.edit();
-        min_range = user.getInt("min_range",100);
-        max_range = user.getInt("max_range",150);
+        min_range = user.getInt("min_range", 100);
+        max_range = user.getInt("max_range", 150);
 
 
-        if(userPref!=-1)
+        if (userPref != -1)
             chooseSong();
 
         setContentView(R.layout.capture_user);
@@ -118,15 +114,58 @@ public class CaptureUser extends Activity {
                 new View.OnClickListener() {
                     public void onClick(View v) {
                         float happy = FaceGraphic.happy;
-                        edit.putFloat("happiness",happy);
+                        edit.putFloat("happiness", happy);
                         edit.commit();
-
                         chooseSong();
                     }
                 }
         );
 
 
+    }
+
+
+    /**
+     * When this activity resumes, redraw all the views
+     */
+    @Override
+    protected void onResume() {
+        super.onResume();
+        startCameraSource();
+//        layout.requestLayout();
+//        player.invalidate();
+//        piano.invalidate();
+//        if (sheet != null) {
+//            sheet.invalidate();
+//        }
+//        layout.requestLayout();
+    }
+
+    /**
+     * When this activity pauses, stop the music
+     */
+    @Override
+    protected void onPause() {
+        if (player != null) {
+            player.Pause();
+            player.DoStop();
+        }
+        if (mPreview != null)
+            mPreview.stop();
+
+        super.onPause();
+    }
+
+    /**
+     * Releases the resources associated with the camera source, the associated detector, and the
+     * rest of the processing pipeline.
+     */
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mCameraSource != null) {
+            mCameraSource.release();
+        }
     }
 
     private void chooseSong() {
@@ -214,7 +253,6 @@ public class CaptureUser extends Activity {
                 .setAction(R.string.ok, listener)
                 .show();
     }
-
 
 
     private class GraphicFaceTrackerFactory implements MultiProcessor.Factory<Face> {

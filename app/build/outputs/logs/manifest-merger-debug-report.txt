@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:2:1-54:12
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:2:1-55:12
 	xmlns:android
 		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:2:11-69
 	package
@@ -28,7 +28,7 @@ ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/A
 	android:name
 		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:10:22-62
 application
-ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:12:5-53:19
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:12:5-54:19
 MERGED from [com.android.support:support-v4:23.3.0] /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services:8.4.0] /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/8.4.0/AndroidManifest.xml:19:5-20
 MERGED from [com.google.android.gms:play-services-ads:8.4.0] /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/8.4.0/AndroidManifest.xml:24:5-32:19
@@ -242,6 +242,10 @@ ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/A
 		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:47:21-37
 	android:scheme
 		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:50:21-42
+activity#com.receptor.CaptureUser
+ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:53:9-49
+	android:name
+		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:53:19-46
 uses-sdk
 INJECTED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:support-v4:23.3.0] /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:20:5-43

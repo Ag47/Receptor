@@ -50,5 +50,6 @@
                     android:scheme="file" />
             </intent-filter>
         </activity>
+        <activity android:name=".CaptureUser" />
     </application>
 </manifest>
