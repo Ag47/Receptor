@@ -175,6 +175,8 @@ public class AllSongsActivity extends ListActivity implements TextWatcher {
 
     IconArrayAdapter<FileUri> adapter;
 
+    float happy;
+
     /* When this activity changes orientation, save the songlist,
      * so we don't have to re-scan for midi songs.
      */
@@ -191,7 +193,7 @@ public class AllSongsActivity extends ListActivity implements TextWatcher {
         setContentView(R.layout.choose_song);
         SharedPreferences user;
         user = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
-        float happy = user.getFloat("happiness",-1);
+        happy = user.getFloat("happiness", -1);
         setTitle("Receptor Happy Index: " + Float.toString(happy));
         
         /* If we're restarting from an orientation change,
@@ -225,7 +227,12 @@ public class AllSongsActivity extends ListActivity implements TextWatcher {
             String prevname = "";
             for (FileUri file : origlist) {
                 if (!file.toString().equals(prevname)) {
-                    songlist.add(file);
+                    if (file.toString().contains("major") && happy >= 0.5)
+                        songlist.add(file);
+                    if (file.toString().contains("minor") && happy < 0.5 && (happy != -1.0 || happy != 0.0) )
+                        songlist.add(file);
+                    if (happy == 0.0 || happy == -1.0)
+                        songlist.add(file);
                 }
                 prevname = file.toString();
             }
