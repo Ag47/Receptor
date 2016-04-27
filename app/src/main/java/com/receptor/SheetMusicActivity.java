@@ -164,7 +164,7 @@ public class SheetMusicActivity extends Activity {
         pageView = (ViewGroup) findViewById(R.id.pageView);
         drag_image = (ImageView) findViewById(R.id.drag_button);
         panel_2D = (RelativeLayout) findViewById(R.id.panel2D);
-
+        play_button = (ImageView) findViewById(R.id.play_button);
 
         drag_image.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -188,6 +188,9 @@ public class SheetMusicActivity extends Activity {
                         // TODO fine tune formula
                         y = (int) (-107.0 / 718.0 * view.getY() + 127.0);
 
+                        play_button.setImageDrawable(getResources().getDrawable(R.drawable.ic_stop_white_48dp));
+                        playing_state = 1;
+
                         player.update(x, y);
 //                        Animation rotate = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate);
 //                        Log.wtf("getY", Integer.toString(y));
@@ -210,7 +213,7 @@ public class SheetMusicActivity extends Activity {
         Log.wtf("playing state original: ", Integer.toString(player.playstate));
         player.SetMidiFile(midifile, options, sheet);
 
-        play_button = (ImageView) findViewById(R.id.play_button);
+
         tick = (ImageView) findViewById(R.id.tick);
         play_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -290,6 +293,8 @@ public class SheetMusicActivity extends Activity {
             @Override
             public void onClick(View view) {
                 actionA.setTitle("Action A clicked");
+                play_button.setImageDrawable(getResources().getDrawable(R.drawable.ic_stop_white_48dp));
+                playing_state = 1;
                 player.update(1, 120);
 
             }
@@ -300,7 +305,9 @@ public class SheetMusicActivity extends Activity {
             @Override
             public void onClick(View view) {
                 actionB.setTitle("Action B clicked");
-                player.update(0,80);
+                play_button.setImageDrawable(getResources().getDrawable(R.drawable.ic_stop_white_48dp));
+                playing_state = 1;
+                player.update(0, 80);
             }
         });
 
@@ -309,6 +316,8 @@ public class SheetMusicActivity extends Activity {
             @Override
             public void onClick(View view) {
                 actionC.setTitle("Action C clicked");
+                play_button.setImageDrawable(getResources().getDrawable(R.drawable.ic_stop_white_48dp));
+                playing_state = 1;
             }
         });
 
@@ -317,6 +326,8 @@ public class SheetMusicActivity extends Activity {
             @Override
             public void onClick(View view) {
                 actionD.setTitle("Action D clicked");
+                play_button.setImageDrawable(getResources().getDrawable(R.drawable.ic_stop_white_48dp));
+                playing_state = 1;
             }
         });
 

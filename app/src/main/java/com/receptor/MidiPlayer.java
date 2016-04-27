@@ -212,7 +212,10 @@ public class MidiPlayer extends LinearLayout {
     /**
      * 0 for minor, 1 for major
      **/
-    private int arousal = -1;        /** 20 - 127 **/
+    private int arousal = -1;
+    /**
+     * 20 - 127
+     **/
 
     public static AudioManager audioManager;
 
@@ -447,6 +450,8 @@ public class MidiPlayer extends LinearLayout {
         params.rightMargin = 0;
         params.leftMargin = buttonheight / 8;
         settingsButton.setLayoutParams(params);
+
+
     }
 
     public void SetPiano(Piano p) {
@@ -546,14 +551,13 @@ public class MidiPlayer extends LinearLayout {
         Log.wtf("Major", "" + major);
 
 
-
         double inverse_tempo_scaled = inverse_tempo * arousal / 100.0;
         // double inverse_tempo_scaled = inverse_tempo * 100.0 / 100.0;
         options.tempo = (int) (1.0 / inverse_tempo_scaled);
 
         Animation rotate = AnimationUtils.loadAnimation(getContext(), R.anim.rotate);
 
-        long duration = (long) ((double) options.tempo / 1000.0 );
+        long duration = (long) ((double) options.tempo / 1000.0);
 
 
         rotate.setDuration(duration);
@@ -562,11 +566,11 @@ public class MidiPlayer extends LinearLayout {
         options.velocity = arousal; //Velocity 0 -127
 
 
-        Log.i("Major Val", ""+ major + " " + valence);
-        if(valence != major)
+        Log.i("Major Val", "" + major + " " + valence);
+        if (valence != major)
             options.majorMinor = valence; //Major = 0, Minor = 1
 
-        else{
+        else {
             options.majorMinor = -1; //Major = 0, Minor = 1
         }
 
@@ -584,10 +588,67 @@ public class MidiPlayer extends LinearLayout {
         }
     }
 
-    private void setKey(int key, int major1){
-        options.key = key;
-        major = major1;
-        valence = major1;
+    private void setKey() {
+
+
+        if (midifile.getFileName().toLowerCase().contains("major")) {
+
+
+            if (midifile.getFileName().toLowerCase().charAt(midifile.getFileName().indexOf("major") - 2) == 'c') {
+                options.key = 0;
+                major = 0;
+            } else if (midifile.getFileName().toLowerCase().charAt(midifile.getFileName().indexOf("major") - 2) == 'd') {
+                options.key = 1;
+                major = 0;
+            } else if (midifile.getFileName().toLowerCase().charAt(midifile.getFileName().indexOf("major") - 2) == 'e') {
+                options.key = 2;
+                major = 0;
+            } else if (midifile.getFileName().toLowerCase().charAt(midifile.getFileName().indexOf("major") - 2) == 'f') {
+                options.key = 3;
+                major = 0;
+            } else if (midifile.getFileName().toLowerCase().charAt(midifile.getFileName().indexOf("major") - 2) == 'g') {
+                options.key = 4;
+                major = 0;
+            } else if (midifile.getFileName().toLowerCase().charAt(midifile.getFileName().indexOf("major") - 2) == 'a') {
+                options.key = 5;
+                major = 0;
+            } else if (midifile.getFileName().toLowerCase().charAt(midifile.getFileName().indexOf("major") - 2) == 'b') {
+                options.key = 6;
+                major = 0;
+            }
+
+        } else if (midifile.getFileName().toLowerCase().contains("minor")) {
+
+            if (midifile.getFileName().toLowerCase().charAt(midifile.getFileName().indexOf("minor") - 2) == 'c') {
+                options.key = 0;
+                major = 1;
+            } else if (midifile.getFileName().toLowerCase().charAt(midifile.getFileName().indexOf("minor") - 2) == 'd') {
+                options.key = 1;
+                major = 1;
+            } else if (midifile.getFileName().toLowerCase().charAt(midifile.getFileName().indexOf("minor") - 2) == 'e') {
+                options.key = 2;
+                major = 1;
+            } else if (midifile.getFileName().toLowerCase().charAt(midifile.getFileName().indexOf("minor") - 2) == 'f') {
+                options.key = 3;
+                major = 1;
+            } else if (midifile.getFileName().toLowerCase().charAt(midifile.getFileName().indexOf("minor") - 2) == 'g') {
+                options.key = 4;
+                major = 1;
+            } else if (midifile.getFileName().toLowerCase().charAt(midifile.getFileName().indexOf("minor") - 2) == 'a') {
+                options.key = 5;
+                major = 1;
+            } else if (midifile.getFileName().toLowerCase().charAt(midifile.getFileName().indexOf("minor") - 2) == 'b') {
+                options.key = 6;
+                major = 1;
+            }
+
+        } else {
+            //Default
+            options.key = 0;
+            major = 0;
+        }
+        valence = major;
+        Log.i("myPlayer", "Key: " + options.key + " " + major);
     }
 
     private void checkFile(String name) {
@@ -658,45 +719,43 @@ public class MidiPlayer extends LinearLayout {
     }
 
 
-    private void fadeout(){
+    private void fadeout() {
         int targetVol = 4;
-        int STEP_DOWN=1;
+        int STEP_DOWN = 1;
         int currentVol = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-        int orgVol=currentVol;
+        int orgVol = currentVol;
         Log.i("myPlayer", "fade out" + orgVol);
-            // fade music gently
-        while(currentVol > targetVol) {
+        // fade music gently
+        while (currentVol > targetVol) {
             try {
                 Thread.sleep(100);
-            }catch (InterruptedException e) {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVol - STEP_DOWN,0);
+            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVol - STEP_DOWN, 0);
             currentVol = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
         }
         player.stop();
 
     }
 
-    private void fadein(){
+    private void fadein() {
         int targetVol = 9;
-        int STEP_UP=1;
+        int STEP_UP = 1;
         int currentVol = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-        int orgVol=currentVol;
+        int orgVol = currentVol;
         // fade music gently
-        while(currentVol < targetVol) {
+        while (currentVol < targetVol) {
             try {
                 Thread.sleep(100);
-            }catch (InterruptedException e) {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVol + STEP_UP,0);
+            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVol + STEP_UP, 0);
             currentVol = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
         }
 
     }
-
-
 
 
     /**
@@ -715,14 +774,13 @@ public class MidiPlayer extends LinearLayout {
         // Hide the midi player, wait a little for the view
         // to refresh, and then start playing
 //        this.setVisibility(View.GONE);
-        setKey(0, 0);
+        setKey();
         timer.removeCallbacks(TimerCallback);
         timer.postDelayed(DoPlay, 0);
     }
 
     public void update(int x, int y) {
         Log.i("myPlayer", "Update");
-
 
 
         if (x == 0) {
