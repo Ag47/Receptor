@@ -538,13 +538,16 @@ public class MidiPlayer extends LinearLayout {
 
         Log.wtf("arousal: ", Integer.toString(arousal));
         Log.wtf("valence: ", Integer.toString(valence));
+        Log.wtf("Key ", "" + options.key);
+
 
 
         double inverse_tempo_scaled = inverse_tempo * arousal / 100.0;
         // double inverse_tempo_scaled = inverse_tempo * 100.0 / 100.0;
         options.tempo = (int) (1.0 / inverse_tempo_scaled);
         options.velocity = arousal; //Velocity 0 -127
-        options.transpose = valence; //Major = 0, Minor = 1
+        options.majorMinor = valence; //Major = 0, Minor = 1
+
 
         pulsesPerMsec = midifile.getTime().getQuarter() * (1000.0 / options.tempo);
 

@@ -1050,13 +1050,14 @@ public class MidiFile {
                 int num = mevent.Notenumber + options.transpose;
                 int note = NoteScale.FromNumber(mevent.Notenumber);
 
-                if(options.key == -1 && options.transpose == 1) {
+                if(options.majorMinor == 1) {
                     //C Major to Minor
                     if (note == 7 || note == 0) {
                         num -= 4;
                     } else {
                         num -= 3;
                     }
+
 
                     if (num < 0)
                         num = 0;

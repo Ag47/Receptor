@@ -50,6 +50,7 @@ public class MidiOptions implements Serializable {
     public int shifttime;            /** Shift note starttimes by the given amount */
     public int transpose;            /** Shift note key up/down by given amount */
     public int velocity;
+    public int majorMinor;
     public int key;                  /** Use the given KeySignature (NoteScale) */
     public TimeSignature time;       /** Use the given time signature (null for default) */
     public TimeSignature defaultTime;  /** The default time signature */
@@ -103,6 +104,7 @@ public class MidiOptions implements Serializable {
         shifttime = 0;
         transpose = 0;
         velocity = 70; //Arbitrary default
+        majorMinor = 0;
         time = null;
         defaultTime = midifile.getTime();
         key = -1;
@@ -157,6 +159,7 @@ public class MidiOptions implements Serializable {
             json.put("transpose", transpose);
             json.put("key", key);
             json.put("velocity", velocity);
+            json.put("majorMinor", majorMinor);
             json.put("combineInterval", combineInterval);
             json.put("shade1Color", shade1Color);
             json.put("shade2Color", shade2Color);
@@ -219,6 +222,7 @@ public class MidiOptions implements Serializable {
             options.transpose = json.getInt("transpose");
             options.key = json.getInt("key");
             options.velocity = json.getInt("velocity");
+            options.majorMinor = json.getInt("majorMinor");
             options.combineInterval = json.getInt("combineInterval");
             options.shade1Color = json.getInt("shade1Color");
             options.shade2Color = json.getInt("shade2Color");
@@ -265,6 +269,7 @@ public class MidiOptions implements Serializable {
         transpose = saved.transpose;
         key = saved.key;
         velocity = saved.velocity;
+        majorMinor = saved.majorMinor;
         combineInterval = saved.combineInterval;
         shade1Color = saved.shade1Color;
         shade2Color = saved.shade2Color;
@@ -323,6 +328,7 @@ public class MidiOptions implements Serializable {
         options.transpose = transpose;
         options.key = key;
         options.velocity = velocity;
+        options.majorMinor = majorMinor;
         options.combineInterval = combineInterval;
         options.shade1Color = shade1Color;
         options.shade2Color = shade2Color;
