@@ -33,6 +33,8 @@ class FaceGraphic extends GraphicOverlay.Graphic {
     private static final float ID_X_OFFSET = -50.0f;
     private static final float BOX_STROKE_WIDTH = 5.0f;
 
+    public static float happy;
+
     private static final int COLOR_CHOICES[] = {
             Color.BLUE,
             Color.CYAN,
@@ -117,6 +119,7 @@ class FaceGraphic extends GraphicOverlay.Graphic {
         canvas.drawText("right eye: " + String.format("%.2f", face.getIsRightEyeOpenProbability()), x + ID_X_OFFSET * 2, y + ID_Y_OFFSET * 2, mIdPaint);
         canvas.drawText("left eye: " + String.format("%.2f", face.getIsLeftEyeOpenProbability()), x - ID_X_OFFSET * 2, y - ID_Y_OFFSET * 2, mIdPaint);
 
+        happy = face.getIsSmilingProbability();
 
         int a;
         int v;
