@@ -128,6 +128,7 @@ MERGED from [com.android.support:design:23.0.0] /Users/SILVER/Documents/AndroidS
 MERGED from [com.android.support:appcompat-v7:23.0.0] /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.3.0] /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.3.0] /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:22:5-20
+MERGED from [com.getbase:floatingactionbutton:1.10.1] /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.getbase/floatingactionbutton/1.10.1/AndroidManifest.xml:12:5-20
 	android:label
 		ADDED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml:14:9-41
 	android:icon
@@ -369,6 +370,7 @@ MERGED from [com.android.support:design:23.0.0] /Users/SILVER/Documents/AndroidS
 MERGED from [com.android.support:appcompat-v7:23.0.0] /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.3.0] /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.3.0] /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:20:5-43
+MERGED from [com.getbase:floatingactionbutton:1.10.1] /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.getbase/floatingactionbutton/1.10.1/AndroidManifest.xml:8:5-10:41
 	android:targetSdkVersion
 		INJECTED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/AndroidManifest.xml

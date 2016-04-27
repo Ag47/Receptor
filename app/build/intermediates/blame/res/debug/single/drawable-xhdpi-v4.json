@@ -432,6 +432,10 @@
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_fab_star.png",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/src/main/res/drawable-xhdpi/ic_fab_star.png"
+    },
+    {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_spinner_mtrl_am_alpha.9.png",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_spinner_mtrl_am_alpha.9.png"
     },
@@ -446,6 +450,10 @@
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_1_mono_dark.png",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_media_route_on_1_mono_dark.png"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/fab_bg_normal.png",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.getbase/floatingactionbutton/1.10.1/res/drawable-xhdpi-v4/fab_bg_normal.png"
     },
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_plus_signin_btn_icon_dark_focused.9.png",
@@ -518,5 +526,9 @@
     {
         "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_text_dark_focused.9.png",
         "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_text_dark_focused.9.png"
+    },
+    {
+        "merged": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/fab_bg_mini.png",
+        "source": "/Users/SILVER/Documents/AndroidStudioProjects/Receptor/app/build/intermediates/exploded-aar/com.getbase/floatingactionbutton/1.10.1/res/drawable-xhdpi-v4/fab_bg_mini.png"
     }
 ]

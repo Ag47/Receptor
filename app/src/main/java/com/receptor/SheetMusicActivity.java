@@ -23,27 +23,24 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.vision.CameraSource;
@@ -54,12 +51,7 @@ import com.google.android.gms.vision.face.FaceDetector;
 import com.receptor.camera.CameraSourcePreview;
 import com.receptor.camera.GraphicOverlay;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.zip.CRC32;
 
 /**
@@ -89,6 +81,7 @@ public class SheetMusicActivity extends Activity {
     private float _y;
 
     private ImageView play_button;
+    public static ImageView tick;
     private RelativeLayout panel_2D;
 
     private ImageView switch_camera;
@@ -196,6 +189,14 @@ public class SheetMusicActivity extends Activity {
                         y = (int) (-107.0 / 718.0 * view.getY() + 127.0);
 
                         player.update(x, y);
+//                        Animation rotate = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate);
+//                        Log.wtf("getY", Integer.toString(y));
+//                        long duration = (long) ((double) options.tempo / 1000.0 / ((double) y / 100.0));
+//                        Log.wtf("getTempo", Long.toString(options.tempo));
+//                        Log.wtf("getDuration", Long.toString(duration));
+//
+//                        rotate.setDuration(duration);
+//                        tick.startAnimation(rotate);
 
                         break;
                     default:
@@ -210,6 +211,7 @@ public class SheetMusicActivity extends Activity {
         player.SetMidiFile(midifile, options, sheet);
 
         play_button = (ImageView) findViewById(R.id.play_button);
+        tick = (ImageView) findViewById(R.id.tick);
         play_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -218,13 +220,14 @@ public class SheetMusicActivity extends Activity {
                     playing_state = 0;
 //                    player.Pause();
                     player.DoStop();
-                    Log.wtf("playing stateAA: ", Integer.toString(player.playstate));
+                    tick.clearAnimation();
                 } else {
                     play_button.setImageDrawable(getResources().getDrawable(R.drawable.ic_stop_white_48dp));
-                    Log.wtf("playing stateSDJKFHB: ", Integer.toString(player.playstate));
                     playing_state = 1;
                     player.Play();
-                    Log.wtf("playing state: ", Integer.toString(player.playstate));
+                    Animation rotate = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate);
+                    rotate.setDuration(options.tempo / 1000);
+                    tick.startAnimation(rotate);
                 }
             }
         });
@@ -264,6 +267,60 @@ public class SheetMusicActivity extends Activity {
                 }
             }
         });
+        initFAB();
+    }
+
+    private void initFAB() {
+
+
+//        FloatingActionButton actionC = new FloatingActionButton(getBaseContext());
+//        actionC.setTitle("Hide/Show Action above");
+//        actionC.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                actionB.setVisibility(actionB.getVisibility() == View.GONE ? View.VISIBLE : View.GONE);
+//            }
+//        });
+
+//        final FloatingActionsMenu menuMultipleActions = (FloatingActionsMenu) findViewById(R.id.multiple_actions);
+//        menuMultipleActions.addButton(actionC);
+
+        final FloatingActionButton actionA = (FloatingActionButton) findViewById(R.id.action_a);
+        actionA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                actionA.setTitle("Action A clicked");
+                player.update(1, 120);
+
+            }
+        });
+
+        final FloatingActionButton actionB = (FloatingActionButton) findViewById(R.id.action_b);
+        actionB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                actionB.setTitle("Action B clicked");
+                player.update(0,80);
+            }
+        });
+
+        final FloatingActionButton actionC = (FloatingActionButton) findViewById(R.id.action_c);
+        actionC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                actionC.setTitle("Action C clicked");
+            }
+        });
+
+        final FloatingActionButton actionD = (FloatingActionButton) findViewById(R.id.action_d);
+        actionD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                actionD.setTitle("Action D clicked");
+            }
+        });
+
+
     }
 
     /* Create the MidiPlayer and Piano views */
@@ -618,7 +675,6 @@ public class SheetMusicActivity extends Activity {
         GraphicFaceTracker(GraphicOverlay overlay) {
             mOverlay = overlay;
             mFaceGraphic = new FaceGraphic(overlay, player);
-
         }
 
         /**

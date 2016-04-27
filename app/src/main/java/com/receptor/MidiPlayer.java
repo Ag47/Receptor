@@ -27,6 +27,8 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -545,6 +547,15 @@ public class MidiPlayer extends LinearLayout {
         double inverse_tempo_scaled = inverse_tempo * arousal / 100.0;
         // double inverse_tempo_scaled = inverse_tempo * 100.0 / 100.0;
         options.tempo = (int) (1.0 / inverse_tempo_scaled);
+
+        Animation rotate = AnimationUtils.loadAnimation(getContext(), R.anim.rotate);
+
+        long duration = (long) ((double) options.tempo / 1000.0 );
+
+
+        rotate.setDuration(duration);
+        SheetMusicActivity.tick.startAnimation(rotate);
+
         options.velocity = arousal; //Velocity 0 -127
         options.majorMinor = valence; //Major = 0, Minor = 1
 
@@ -688,7 +699,7 @@ public class MidiPlayer extends LinearLayout {
         // to refresh, and then start playing
 //        this.setVisibility(View.GONE);
         timer.removeCallbacks(TimerCallback);
-        timer.postDelayed(DoPlay, 1000);
+        timer.postDelayed(DoPlay, 0);
     }
 
     public void update(int x, int y) {

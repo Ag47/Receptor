@@ -14,6 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:id="@+id/pageView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -35,6 +36,8 @@ limitations under the License.
                 android:layout_height="144dp"
                 android:layout_centerInParent="true"
                 android:src="@drawable/drag_button" />
+
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -43,18 +46,41 @@ limitations under the License.
             android:layout_height="match_parent"
             android:visibility="gone">
 
-                <com.receptor.camera.CameraSourcePreview
-                    android:id="@+id/preview"
+            <com.receptor.camera.CameraSourcePreview
+                android:id="@+id/preview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.receptor.camera.GraphicOverlay
+                    android:id="@+id/faceOverlay"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent" />
 
-                    <com.receptor.camera.GraphicOverlay
-                        android:id="@+id/faceOverlay"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+            </com.receptor.camera.CameraSourcePreview>
 
-                </com.receptor.camera.CameraSourcePreview>
+        </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/metronome_base"
+                android:tint="#FFFFFF" />
+
+            <ImageView
+                android:id="@+id/tick"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/tick"
+                android:tint="#FFFFFF" />
         </RelativeLayout>
     </RelativeLayout>
 
@@ -84,9 +110,60 @@ limitations under the License.
                 android:layout_height="128dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-
                 android:src="@drawable/ic_play_arrow_white_48dp" />
+
+
         </LinearLayout>
     </RelativeLayout>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/multiple_actions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        fab:fab_addButtonColorNormal="@color/white"
+        fab:fab_addButtonColorPressed="@color/white_pressed"
+        fab:fab_addButtonPlusIconColor="@color/half_black"
+        fab:fab_labelStyle="@style/menu_labels_style">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/action_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/white"
+            fab:fab_colorPressed="@color/white_pressed"
+            fab:fab_title="Happy" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/action_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/white"
+            fab:fab_colorPressed="@color/white_pressed"
+            fab:fab_title="Sad" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/action_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/white"
+            fab:fab_colorPressed="@color/white_pressed"
+            fab:fab_title="Blue Style" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/action_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/white"
+            fab:fab_colorPressed="@color/white_pressed"
+            fab:fab_title="Preset 4" />
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
 
 </RelativeLayout>
